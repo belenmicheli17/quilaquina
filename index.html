@@ -1,0 +1,670 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Lácar · Pesca y navegación en el Lago Lácar — Patagonia</title>
+<meta name="description" content="Salidas de pesca, paseos en lancha por Quila Quina y aventuras de día completo con almuerzo en el Lago Lácar, San Martín de los Andes." />
+<meta name="author" content="Lácar Experiencias" />
+
+<meta property="og:title" content="Lácar · Experiencias en el Lago Lácar" />
+<meta property="og:description" content="Pesca, paseos en lancha y días completos guiados en la Patagonia argentina." />
+<meta property="og:type" content="website" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script src="https://cdn.jsdelivr.net/npm/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+<script>
+  // Copiado de tailwind.config.ts de Lovable
+  tailwind.config = {
+    darkMode: ["class"],
+    theme: {
+      container: { center: true, padding: "2rem", screens: { "2xl": "1400px" } },
+      extend: {
+        colors: {
+          border: "hsl(var(--border))",
+          input: "hsl(var(--input))",
+          ring: "hsl(var(--ring))",
+          background: "hsl(var(--background))",
+          foreground: "hsl(var(--foreground))",
+          primary: { DEFAULT: "hsl(var(--primary))", foreground: "hsl(var(--primary-foreground))" },
+          secondary: { DEFAULT: "hsl(var(--secondary))", foreground: "hsl(var(--secondary-foreground))" },
+          destructive: { DEFAULT: "hsl(var(--destructive))", foreground: "hsl(var(--destructive-foreground))" },
+          muted: { DEFAULT: "hsl(var(--muted))", foreground: "hsl(var(--muted-foreground))" },
+          accent: { DEFAULT: "hsl(var(--accent))", foreground: "hsl(var(--accent-foreground))" },
+          popover: { DEFAULT: "hsl(var(--popover))", foreground: "hsl(var(--popover-foreground))" },
+          card: { DEFAULT: "hsl(var(--card))", foreground: "hsl(var(--card-foreground))" },
+          ember: { DEFAULT: "hsl(var(--ember))", foreground: "hsl(var(--ember-foreground))" },
+          "primary-glow": "hsl(var(--primary-glow))"
+        },
+        borderRadius: {
+          lg: "var(--radius)",
+          md: "calc(var(--radius) - 2px)",
+          sm: "calc(var(--radius) - 4px)"
+        }
+      }
+    }
+  };
+</script>
+<style type="text/tailwindcss">
+  /* ====== Copiado de src/index.css de Lovable ====== */
+  @layer base {
+    :root {
+      --background: 38 30% 96%;
+      --foreground: 200 45% 12%;
+      --card: 38 25% 98%;
+      --card-foreground: 200 45% 12%;
+      --popover: 38 25% 98%;
+      --popover-foreground: 200 45% 12%;
+      --primary: 192 75% 18%;
+      --primary-foreground: 38 30% 96%;
+      --primary-glow: 188 70% 38%;
+      --secondary: 32 35% 88%;
+      --secondary-foreground: 200 45% 12%;
+      --muted: 38 20% 92%;
+      --muted-foreground: 200 15% 38%;
+      --accent: 178 65% 45%;
+      --accent-foreground: 200 45% 12%;
+      --ember: 18 85% 55%;
+      --ember-foreground: 38 30% 96%;
+      --destructive: 0 70% 45%;
+      --destructive-foreground: 38 30% 96%;
+      --border: 200 20% 85%;
+      --input: 200 20% 85%;
+      --ring: 192 75% 18%;
+      --radius: 0.75rem;
+      --gradient-lake: linear-gradient(180deg, hsl(192 75% 18% / 0.1), hsl(178 65% 45% / 0.15));
+      --gradient-hero: linear-gradient(180deg, hsl(200 60% 8% / 0.2) 0%, hsl(200 60% 8% / 0.45) 50%, hsl(200 60% 8% / 0.85) 100%);
+      --gradient-ember: linear-gradient(135deg, hsl(18 85% 55%), hsl(35 90% 60%));
+      --gradient-deep: linear-gradient(180deg, hsl(192 75% 18%), hsl(200 60% 10%));
+      --shadow-soft: 0 4px 20px -4px hsl(200 60% 15% / 0.15);
+      --shadow-card: 0 10px 40px -10px hsl(200 60% 15% / 0.25);
+      --shadow-glow: 0 20px 60px -15px hsl(178 65% 45% / 0.4);
+      --transition-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+      --transition-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+  }
+  @layer base {
+    * { @apply border-border; }
+    html { scroll-behavior: smooth; }
+    body {
+      @apply bg-background text-foreground;
+      font-family: 'Inter', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Fraunces', serif;
+      font-feature-settings: "ss01", "ss02";
+      letter-spacing: -0.02em;
+    }
+  }
+  @layer utilities {
+    .font-display { font-family: 'Fraunces', serif; }
+    .text-balance { text-wrap: balance; }
+    .bg-gradient-hero { background: var(--gradient-hero); }
+    .bg-gradient-ember { background: var(--gradient-ember); }
+    .bg-gradient-deep { background: var(--gradient-deep); }
+    .shadow-card { box-shadow: var(--shadow-card); }
+    .shadow-glow { box-shadow: var(--shadow-glow); }
+    .transition-smooth { transition: all 0.4s var(--transition-smooth); }
+    /* agregado solo para cuando falta una foto */
+    .foto { background: linear-gradient(160deg, hsl(var(--primary-glow)), hsl(var(--primary))); }
+  }
+  @keyframes fade-up {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+  .animate-fade-up { animation: fade-up 0.8s var(--transition-smooth) both; }
+  .animate-float { animation: float 4s ease-in-out infinite; }
+</style>
+</head>
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<header id="navbar" class="group fixed top-0 inset-x-0 z-50 transition-smooth bg-transparent py-5 [&.scrolled]:bg-background/85 [&.scrolled]:backdrop-blur-lg [&.scrolled]:border-b [&.scrolled]:border-border/60 [&.scrolled]:py-3">
+  <div class="container flex items-center justify-between">
+    <a href="#" class="font-display text-2xl font-semibold tracking-tight text-background group-[.scrolled]:text-foreground">
+      Lácar<span class="text-accent">.</span>
+    </a>
+    <nav class="hidden md:flex items-center gap-8">
+      <a href="#experiencias" class="text-sm font-medium transition-smooth hover:text-accent text-background/90 group-[.scrolled]:text-foreground/80">Experiencias</a>
+      <a href="#nosotros" class="text-sm font-medium transition-smooth hover:text-accent text-background/90 group-[.scrolled]:text-foreground/80">Nosotros</a>
+      <a href="#testimonios" class="text-sm font-medium transition-smooth hover:text-accent text-background/90 group-[.scrolled]:text-foreground/80">Testimonios</a>
+      <a href="#reservar" class="text-sm font-medium transition-smooth hover:text-accent text-background/90 group-[.scrolled]:text-foreground/80">Reservar</a>
+      <a href="#reservar" class="px-5 py-2.5 rounded-full bg-ember text-ember-foreground text-sm font-semibold hover:opacity-90 transition-smooth shadow-soft">Reservá ahora</a>
+    </nav>
+    <button id="btn-menu" class="md:hidden text-background group-[.scrolled]:text-foreground" aria-label="Menu">
+      <i data-lucide="menu" class="icono-abrir"></i>
+      <i data-lucide="x" class="icono-cerrar hidden"></i>
+    </button>
+  </div>
+  <nav id="menu-movil" class="hidden md:hidden bg-background border-t border-border mt-3 px-6 py-6 flex-col gap-4">
+    <a href="#experiencias" class="text-foreground/80 font-medium">Experiencias</a>
+    <a href="#nosotros" class="text-foreground/80 font-medium">Nosotros</a>
+    <a href="#testimonios" class="text-foreground/80 font-medium">Testimonios</a>
+    <a href="#reservar" class="text-foreground/80 font-medium">Reservar</a>
+    <a href="#reservar" class="px-5 py-3 rounded-full bg-ember text-ember-foreground text-sm font-semibold text-center">Reservá ahora</a>
+  </nav>
+</header>
+
+<main id="inicio" class="min-h-screen bg-background">
+
+  <!-- ================= HERO ================= -->
+  <section class="relative min-h-screen w-full overflow-hidden flex items-end foto">
+    <img src="img/hero-lago.jpg" alt="Vista aérea del Lago Lácar al amanecer" class="absolute inset-0 w-full h-full object-cover" width="1920" height="1080" onerror="this.remove()">
+    <div class="absolute inset-0 bg-gradient-hero"></div>
+
+    <div class="container relative z-10 pb-20 md:pb-32 pt-32">
+      <div class="max-w-3xl animate-fade-up">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-background/15 backdrop-blur-md border border-background/25 text-background text-xs font-medium mb-6">
+          <i data-lucide="map-pin" class="text-accent w-3.5 h-3.5"></i>
+          San Martín de los Andes · Patagonia Argentina
+        </div>
+
+        <h1 class="font-display text-background text-5xl md:text-7xl lg:text-8xl font-medium leading-[0.95] text-balance mb-6">
+          El lago no se visita.
+          <br>
+          <em class="italic font-light text-accent">Se vive.</em>
+        </h1>
+
+        <p class="text-background/85 text-lg md:text-xl max-w-xl leading-relaxed mb-10">
+          Pesca, navegación y aventuras de día completo en el corazón del Lago Lácar. Experiencias guiadas por baqueanos que nacieron entre estas montañas.
+        </p>
+
+        <div class="flex flex-wrap gap-4">
+          <a href="#experiencias" class="group/b px-8 py-4 rounded-full bg-ember text-ember-foreground font-semibold shadow-glow hover:scale-105 transition-smooth inline-flex items-center gap-2">
+            Ver experiencias
+            <i data-lucide="arrow-down" class="w-[18px] h-[18px] group-hover/b:translate-y-1 transition-smooth"></i>
+          </a>
+          <a href="#reservar" class="px-8 py-4 rounded-full bg-background/10 backdrop-blur-md border border-background/30 text-background font-semibold hover:bg-background/20 transition-smooth">
+            Reservar salida
+          </a>
+        </div>
+      </div>
+
+      <div class="mt-20 grid grid-cols-3 gap-6 max-w-2xl border-t border-background/20 pt-8">
+        <div><div class="font-display text-background text-3xl md:text-4xl font-semibold">+15</div><div class="text-background/70 text-xs md:text-sm uppercase tracking-wider mt-1">años navegando</div></div>
+        <div><div class="font-display text-background text-3xl md:text-4xl font-semibold">4.9★</div><div class="text-background/70 text-xs md:text-sm uppercase tracking-wider mt-1">valoración media</div></div>
+        <div><div class="font-display text-background text-3xl md:text-4xl font-semibold">100%</div><div class="text-background/70 text-xs md:text-sm uppercase tracking-wider mt-1">equipo incluido</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= EXPERIENCIAS ================= -->
+  <section id="experiencias" class="py-24 md:py-32 bg-background">
+    <div class="container">
+      <div class="max-w-2xl mb-16">
+        <span class="text-accent text-sm font-medium uppercase tracking-widest">Nuestras experiencias</span>
+        <h2 class="font-display text-foreground text-4xl md:text-6xl font-medium mt-4 leading-[1.05] text-balance">
+          Tres formas de enamorarse del <em class="italic font-light">Lácar</em>.
+        </h2>
+      </div>
+      <div id="grilla-exp" class="grid lg:grid-cols-3 gap-6 md:gap-8"></div>
+    </div>
+  </section>
+
+  <!-- ================= NOSOTROS ================= -->
+  <section id="nosotros" class="py-24 md:py-32 bg-gradient-deep text-background relative overflow-hidden">
+    <div class="absolute inset-0 opacity-20" style="background-image:radial-gradient(circle at 20% 30%, hsl(var(--accent)) 0%, transparent 40%), radial-gradient(circle at 80% 70%, hsl(var(--primary-glow)) 0%, transparent 40%)"></div>
+    <div class="container relative">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <div>
+          <span class="text-accent text-sm font-medium uppercase tracking-widest">Nosotros</span>
+          <h2 class="font-display text-4xl md:text-6xl font-medium mt-4 leading-[1.05] text-balance">
+            Tres generaciones <em class="italic font-light">en el mismo lago.</em>
+          </h2>
+          <p class="text-background/75 text-lg leading-relaxed mt-6 max-w-lg">
+            Desde 2009 navegamos el Lago Lácar compartiendo lo que amamos: el silencio del bosque andino, la pesca con mosca al atardecer, el mate en la proa mientras el sol se esconde detrás del Chapelco.
+          </p>
+          <p class="text-background/75 text-lg leading-relaxed mt-4 max-w-lg">
+            No somos una empresa de turismo. Somos una familia que abre sus muelles para que vos también sientas este lugar como propio.
+          </p>
+        </div>
+        <div id="valores" class="grid gap-5"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= TESTIMONIOS ================= -->
+  <section id="testimonios" class="py-24 md:py-32 bg-secondary/40">
+    <div class="container">
+      <div class="max-w-2xl mb-16">
+        <span class="text-accent text-sm font-medium uppercase tracking-widest">Lo que dicen</span>
+        <h2 class="font-display text-foreground text-4xl md:text-6xl font-medium mt-4 leading-[1.05] text-balance">
+          Quienes ya navegaron <em class="italic font-light">con nosotros.</em>
+        </h2>
+      </div>
+      <div id="grilla-test" class="grid md:grid-cols-3 gap-6"></div>
+    </div>
+  </section>
+
+  <!-- ================= RESERVAR ================= -->
+  <section id="reservar" class="py-24 md:py-32 bg-background">
+    <div class="container">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start max-w-6xl mx-auto">
+        <div>
+          <span class="text-accent text-sm font-medium uppercase tracking-widest">Reservá tu salida</span>
+          <h2 class="font-display text-foreground text-4xl md:text-6xl font-medium mt-4 leading-[1.05] text-balance">
+            El lago te <em class="italic font-light">espera.</em>
+          </h2>
+          <p class="text-muted-foreground text-lg leading-relaxed mt-6 max-w-md">
+            Completá el formulario y te confirmamos disponibilidad por WhatsApp en pocas horas. Sin pagos por adelantado.
+          </p>
+          <div class="mt-10 space-y-4">
+            <div class="flex items-center gap-3 text-foreground/80"><i data-lucide="calendar" class="text-accent w-5 h-5"></i><span>Temporada activa: octubre a mayo</span></div>
+            <div class="flex items-center gap-3 text-foreground/80"><span class="w-5 h-5 flex items-center justify-center text-accent">📍</span><span>Muelle Costanera, San Martín de los Andes</span></div>
+            <div class="flex items-center gap-3 text-foreground/80"><span class="w-5 h-5 flex items-center justify-center text-accent">💬</span><span>+54 9 2972 55-5555 · hola@lacar.com.ar</span></div>
+          </div>
+        </div>
+
+        <form id="form-reserva" class="bg-card p-8 md:p-10 rounded-3xl shadow-card border border-border space-y-5">
+          <div>
+            <label class="block text-sm font-medium text-foreground mb-2" for="f-nombre">Tu nombre</label>
+            <input id="f-nombre" required placeholder="Juan Pérez" class="campo w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-smooth">
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-foreground mb-2" for="f-email">Email</label>
+            <input id="f-email" required type="email" placeholder="juan@email.com" class="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-smooth">
+          </div>
+          <div class="grid grid-cols-2 gap-4">
+            <div>
+              <label class="block text-sm font-medium text-foreground mb-2" for="f-fecha">Fecha</label>
+              <input id="f-fecha" required type="date" class="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-smooth">
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-foreground mb-2" for="f-personas">Personas</label>
+              <input id="f-personas" required type="number" min="1" max="10" value="2" class="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-smooth">
+            </div>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-foreground mb-2" for="f-exp">Experiencia</label>
+            <select id="f-exp" class="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-smooth">
+              <option value="salida-de-pesca">Pesca · 2 horas</option>
+              <option value="paseo-quila-quina">Paseo Quila Quina · 30 min</option>
+              <option value="aventura-familiar">Día completo familiar</option>
+            </select>
+          </div>
+          <button type="submit" class="w-full py-4 rounded-xl bg-ember text-ember-foreground font-semibold shadow-glow hover:scale-[1.02] transition-smooth inline-flex items-center justify-center gap-2">
+            Solicitar reserva
+            <i data-lucide="send" class="w-[18px] h-[18px]"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ================= DETALLE DE EXPERIENCIA ================= -->
+<main id="detalle" class="hidden min-h-screen bg-background"></main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="bg-foreground text-background py-16">
+  <div class="container">
+    <div class="grid md:grid-cols-3 gap-12 mb-12">
+      <div>
+        <div class="font-display text-3xl font-semibold mb-3">Lácar<span class="text-accent">.</span></div>
+        <p class="text-background/60 leading-relaxed">Salidas guiadas en el Lago Lácar desde 2009. Patagonia auténtica, sin filtros.</p>
+      </div>
+      <div>
+        <h4 class="font-semibold mb-4 text-sm uppercase tracking-wider text-background/80">Navegá</h4>
+        <ul class="space-y-2 text-background/60">
+          <li><a href="#experiencias" class="hover:text-accent transition-smooth">Experiencias</a></li>
+          <li><a href="#nosotros" class="hover:text-accent transition-smooth">Nosotros</a></li>
+          <li><a href="#testimonios" class="hover:text-accent transition-smooth">Testimonios</a></li>
+          <li><a href="#reservar" class="hover:text-accent transition-smooth">Reservar</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-semibold mb-4 text-sm uppercase tracking-wider text-background/80">Seguinos</h4>
+        <div class="flex gap-3">
+          <a href="#" aria-label="Instagram" class="w-10 h-10 rounded-full bg-background/10 flex items-center justify-center hover:bg-accent hover:text-foreground transition-smooth"><i data-lucide="instagram" class="w-[18px] h-[18px]"></i></a>
+          <a href="#" aria-label="Facebook" class="w-10 h-10 rounded-full bg-background/10 flex items-center justify-center hover:bg-accent hover:text-foreground transition-smooth"><i data-lucide="facebook" class="w-[18px] h-[18px]"></i></a>
+          <a href="#" aria-label="WhatsApp" class="w-10 h-10 rounded-full bg-background/10 flex items-center justify-center hover:bg-accent hover:text-foreground transition-smooth"><i data-lucide="message-circle" class="w-[18px] h-[18px]"></i></a>
+        </div>
+        <p class="text-background/50 text-sm mt-6">Muelle Costanera<br>San Martín de los Andes, Neuquén</p>
+      </div>
+    </div>
+    <div class="pt-8 border-t border-background/10 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-background/50">
+      <p>© <span id="anio"></span> Lácar Experiencias. Habilitado Prefectura Naval Argentina.</p>
+      <p>Hecho con <span class="text-accent">♥</span> en la Patagonia</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Aviso de reserva recibida -->
+<div id="toast" class="hidden fixed bottom-6 right-6 z-[60] bg-card border border-border shadow-card rounded-xl px-5 py-4 max-w-sm">
+  <div class="font-semibold text-foreground text-sm">¡Reserva recibida!</div>
+  <div class="text-muted-foreground text-sm mt-1">Te contactamos en menos de 2 horas para confirmar.</div>
+</div>
+
+<script>
+/* ================= DATOS (igual que experiences.ts de Lovable) ================= */
+const experiences = [
+  {
+    slug: "salida-de-pesca",
+    videos: [{ src: "https://cdn.coverr.co/videos/coverr-fishing-on-a-lake-3268/1080p.mp4", poster: "img/pesca-2.jpg", caption: "Una mañana de trolling en aguas tranquilas del Lácar." }],
+    img: "img/pesca.jpg",
+    gallery: ["img/pesca.jpg", "img/pesca-2.jpg", "img/pesca-3.jpg"],
+    icon: "fish",
+    tag: "Para pescadores",
+    title: "Salida de pesca",
+    duration: "2 horas",
+    capacity: "1 a 3 personas",
+    desc: "Embarcación, cañas, señuelos y guía baqueano. Trolling y spinning en los puntos más productivos del lago.",
+    longDesc: [
+      "Salimos al amanecer o al atardecer, los dos momentos en los que las truchas más pican. Nuestro guía conoce el Lácar como su patio: sabe dónde están las corrientes frías, los desniveles del fondo y los puntos donde las arcoíris cazan en superficie.",
+      "Vas a pescar truchas arcoíris, marrones y, con suerte, salmones encerrados de gran porte. Trabajamos siempre con devolución consciente para cuidar el recurso, salvo que quieras llevarte tu pieza para asar.",
+      "No hace falta experiencia previa: si es tu primera vez, te enseñamos. Si sos pescador experimentado, vas a disfrutar de los rincones más productivos del lago."
+    ],
+    features: ["Equipo completo de pesca", "Guía especializado", "Permiso incluido"],
+    includes: ["Embarcación con motor 4 tiempos", "Cañas, reels, señuelos y mosquitas", "Permiso de pesca diario", "Guía baqueano bilingüe", "Snacks y bebidas calientes", "Chalecos salvavidas para todos"],
+    itinerary: [
+      { time: "06:30", title: "Encuentro en el muelle", desc: "Briefing de seguridad y armado de equipos." },
+      { time: "07:00", title: "Navegación a la zona de pesca", desc: "Trolling sobre las primeras corrientes." },
+      { time: "08:00", title: "Spinning desde la costa", desc: "Lanzamientos en bahías protegidas." },
+      { time: "09:00", title: "Regreso al muelle", desc: "Foto con las capturas y café caliente." }
+    ],
+    price: "$85.000"
+  },
+  {
+    slug: "paseo-quila-quina",
+    videos: [{ src: "https://cdn.coverr.co/videos/coverr-a-boat-sailing-in-a-lake-2633/1080p.mp4", poster: "img/lancha-3.jpg", caption: "Recorrido por la bahía de Quila Quina al mediodía." }],
+    img: "img/lancha.jpg",
+    gallery: ["img/lancha.jpg", "img/lancha-2.jpg", "img/lancha-3.jpg"],
+    icon: "anchor",
+    tag: "Clásico imperdible",
+    title: "Paseo por Quila Quina",
+    duration: "30 minutos",
+    capacity: "Hasta 8 personas",
+    desc: "Recorré la bahía más fotografiada del Lácar a bordo de nuestra lancha. Aguas turquesas, costas de coihues y vistas únicas del cerro Chapelco.",
+    longDesc: [
+      "Es el paseo perfecto si tenés poco tiempo y querés sentir el lago en su máxima expresión. En 30 minutos cruzamos la bahía de Quila Quina, una de las postales más reconocidas de la Patagonia.",
+      "Vas a ver el agua cambiar de turquesa a azul profundo según la profundidad, las playas blancas escondidas y los bosques de coihues que llegan hasta la orilla. El cerro Chapelco se asoma de fondo en cada foto.",
+      "Salimos cada hora de 10 a 18 hs. Apto para chicos desde 3 años. Ideal para combinar con un almuerzo en Quila Quina."
+    ],
+    features: ["Salidas cada hora", "Chalecos para todos", "Apto niños"],
+    includes: ["Lancha con techo y banquetas acolchadas", "Guía con datos del lago y la región", "Chalecos salvavidas (incluso talles infantiles)", "Foto grupal de regalo"],
+    itinerary: [
+      { time: "00:00", title: "Salida del muelle", desc: "Bienvenida y entrega de chalecos." },
+      { time: "00:10", title: "Bahía de Quila Quina", desc: "Vistas panorámicas y fotos." },
+      { time: "00:20", title: "Costa de coihues", desc: "Acercamiento a la vegetación nativa." },
+      { time: "00:30", title: "Regreso", desc: "Vuelta al muelle con foto grupal." }
+    ],
+    price: "$25.000"
+  },
+  {
+    slug: "aventura-familiar",
+    videos: [{ src: "https://cdn.coverr.co/videos/coverr-a-family-having-fun-in-the-lake-7081/1080p.mp4", poster: "img/familia-2.jpg", caption: "Un día completo en una playa escondida del Lácar." }],
+    img: "img/familia.jpg",
+    gallery: ["img/familia.jpg", "img/familia-2.jpg", "img/familia-3.jpg"],
+    icon: "sun",
+    tag: "Día completo",
+    title: "Aventura familiar",
+    duration: "8 horas",
+    capacity: "Familias hasta 6",
+    desc: "Navegación a playas escondidas, almuerzo de campo a la orilla del lago, tiempo libre para nadar y caminar. La experiencia más completa.",
+    longDesc: [
+      "Un día entero para desconectar y vivir el Lácar como pocos lo conocen. Salimos temprano, navegamos a una playa privada que solo se accede por agua, y montamos un campamento base con mesas, reposeras y sombra.",
+      "El almuerzo es de campo: cordero patagónico al asador, tablas de quesos regionales, vinos de la zona y postres caseros. Todo preparado por nuestro cocinero a la orilla del lago.",
+      "Después del almuerzo tenés tiempo libre para nadar, hacer una caminata corta por el bosque, intentar la pesca con caña o simplemente leer una hora bajo los árboles. Volvemos al atardecer."
+    ],
+    features: ["Almuerzo gourmet incluido", "Bebidas y vino regional", "Playa privada"],
+    includes: ["Navegación de ida y vuelta a playa privada", "Almuerzo de campo (cordero al asador o vegetariano)", "Vinos, cerveza artesanal y bebidas sin alcohol", "Reposeras, mesas, sombrillas y mantas", "Equipo de pesca recreativa para chicos", "Caminata guiada opcional por el bosque"],
+    itinerary: [
+      { time: "10:00", title: "Embarque", desc: "Bienvenida con café y medialunas." },
+      { time: "10:30", title: "Navegación a playa privada", desc: "Recorrido por bahías escondidas." },
+      { time: "12:00", title: "Tiempo libre", desc: "Nado, caminata o pesca recreativa." },
+      { time: "13:30", title: "Almuerzo a la orilla", desc: "Cordero al asador y vinos regionales." },
+      { time: "15:30", title: "Siesta y descanso", desc: "Reposeras a la sombra del bosque." },
+      { time: "17:30", title: "Regreso al atardecer", desc: "Navegación con luz dorada." }
+    ],
+    price: "$220.000"
+  }
+];
+
+const values = [
+  { icon: "compass", title: "Baqueanos locales", desc: "Nacimos y crecimos en el Lácar. Conocemos cada bahía, cada corriente, cada secreto." },
+  { icon: "shield", title: "Seguridad total", desc: "Embarcaciones habilitadas por Prefectura. Equipos certificados y revisados a diario." },
+  { icon: "heart", title: "Sin apuros", desc: "Grupos chicos. Tiempo para detenerse, mirar y respirar. La Patagonia no se apura." }
+];
+
+const reviews = [
+  { name: "Martina G.", place: "Buenos Aires", text: "Salimos a pescar con mi viejo y fue de las mejores mañanas de mi vida. El guía nos conocía la zona como la palma de la mano. Sacamos tres truchas hermosas." },
+  { name: "Familia Rossi", place: "Córdoba", text: "El día completo fue una locura. Los chicos no querían volver. La playa, el almuerzo, el agua turquesa… inolvidable." },
+  { name: "Luca P.", place: "Italia", text: "Quila Quina desde la lancha es otra cosa. Media hora que vale cada peso. Volvería mañana mismo." }
+];
+
+/* ================= ARMADO DE LA PÁGINA ================= */
+const $ = (s) => document.querySelector(s);
+const TITULO_INICIO = document.title;
+const imgTag = (src, alt, cls) => `<img src="${src}" alt="${alt}" loading="lazy" class="${cls}" onerror="this.remove()">`;
+$("#anio").textContent = new Date().getFullYear();
+
+$("#grilla-exp").innerHTML = experiences.map(exp => `
+  <a href="#/experiencias/${exp.slug}" class="group relative bg-card rounded-2xl overflow-hidden shadow-card hover:shadow-glow transition-smooth flex flex-col cursor-pointer focus:outline-none focus:ring-2 focus:ring-accent">
+    <div class="relative aspect-[4/3] overflow-hidden foto">
+      ${imgTag(exp.img, exp.title, "w-full h-full object-cover group-hover:scale-110 transition-smooth duration-700")}
+      <div class="absolute top-4 left-4 px-3 py-1 rounded-full bg-background/90 backdrop-blur-sm text-foreground text-xs font-semibold">${exp.tag}</div>
+      <div class="absolute bottom-4 right-4 w-12 h-12 rounded-full bg-background/95 flex items-center justify-center">
+        <i data-lucide="${exp.icon}" class="text-primary w-[22px] h-[22px]"></i>
+      </div>
+    </div>
+    <div class="p-7 flex-1 flex flex-col">
+      <div class="flex items-center gap-4 text-muted-foreground text-sm mb-3">
+        <span class="flex items-center gap-1.5"><i data-lucide="clock" class="w-3.5 h-3.5"></i> ${exp.duration}</span>
+        <span class="flex items-center gap-1.5"><i data-lucide="users" class="w-3.5 h-3.5"></i> ${exp.capacity}</span>
+      </div>
+      <h3 class="font-display text-2xl md:text-3xl font-semibold text-foreground mb-3 group-hover:text-primary transition-smooth">${exp.title}</h3>
+      <p class="text-muted-foreground leading-relaxed mb-5">${exp.desc}</p>
+      <ul class="space-y-2 mb-6">
+        ${exp.features.map(f => `<li class="flex items-center gap-2 text-sm text-foreground/80"><span class="w-1.5 h-1.5 rounded-full bg-accent"></span>${f}</li>`).join("")}
+      </ul>
+      <div class="mt-auto pt-5 border-t border-border flex items-end justify-between">
+        <div>
+          <div class="text-xs text-muted-foreground uppercase tracking-wide">Desde</div>
+          <div class="font-display text-2xl font-semibold text-foreground">${exp.price}</div>
+        </div>
+        <span class="inline-flex items-center gap-1 px-5 py-3 rounded-full bg-foreground text-background text-sm font-semibold group-hover:bg-primary transition-smooth">
+          Ver más <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+        </span>
+      </div>
+    </div>
+  </a>`).join("");
+
+$("#valores").innerHTML = values.map(v => `
+  <div class="flex gap-5 p-6 rounded-2xl bg-background/5 border border-background/10 backdrop-blur-sm hover:bg-background/10 transition-smooth">
+    <div class="shrink-0 w-12 h-12 rounded-xl bg-accent/20 flex items-center justify-center"><i data-lucide="${v.icon}" class="text-accent w-[22px] h-[22px]"></i></div>
+    <div>
+      <h3 class="font-display text-xl font-semibold mb-1">${v.title}</h3>
+      <p class="text-background/70 leading-relaxed">${v.desc}</p>
+    </div>
+  </div>`).join("");
+
+const estrella = `<svg width="16" height="16" viewBox="0 0 24 24" fill="hsl(var(--ember))" stroke="hsl(var(--ember))" stroke-width="2" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>`;
+$("#grilla-test").innerHTML = reviews.map(r => `
+  <div class="bg-background p-8 rounded-2xl shadow-soft border border-border/50">
+    <div class="flex gap-0.5 mb-4">${estrella.repeat(5)}</div>
+    <p class="font-display text-xl text-foreground leading-snug mb-6 text-balance">"${r.text}"</p>
+    <div class="pt-4 border-t border-border">
+      <div class="font-semibold text-foreground">${r.name}</div>
+      <div class="text-sm text-muted-foreground">${r.place}</div>
+    </div>
+  </div>`).join("");
+
+/* ===== Página de detalle (copiada de ExperienceDetail.tsx) ===== */
+function renderDetalle(exp) {
+  $("#detalle").innerHTML = `
+    <section class="relative h-[70vh] min-h-[520px] w-full overflow-hidden foto">
+      ${imgTag(exp.gallery[0], exp.title, "absolute inset-0 w-full h-full object-cover")}
+      <div class="absolute inset-0 bg-gradient-hero"></div>
+      <div class="container relative h-full flex flex-col justify-end pb-16 md:pb-24">
+        <a href="#experiencias" class="inline-flex items-center gap-2 text-background/90 text-sm font-medium mb-6 hover:text-accent transition-smooth w-fit">
+          <i data-lucide="arrow-left" class="w-4 h-4"></i> Volver a experiencias
+        </a>
+        <span class="text-accent text-sm font-medium uppercase tracking-widest mb-3">${exp.tag}</span>
+        <h1 class="font-display text-background text-5xl md:text-7xl font-medium leading-[1.05] max-w-4xl text-balance">${exp.title}</h1>
+        <div class="flex flex-wrap items-center gap-6 mt-6 text-background/90">
+          <span class="flex items-center gap-2"><i data-lucide="clock" class="w-[18px] h-[18px]"></i> ${exp.duration}</span>
+          <span class="flex items-center gap-2"><i data-lucide="users" class="w-[18px] h-[18px]"></i> ${exp.capacity}</span>
+          <span class="flex items-center gap-2"><i data-lucide="${exp.icon}" class="w-[18px] h-[18px]"></i> Desde ${exp.price}</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-20 md:py-28">
+      <div class="container grid lg:grid-cols-3 gap-12">
+        <div class="lg:col-span-2 space-y-6">
+          <span class="text-accent text-sm font-medium uppercase tracking-widest">Sobre la experiencia</span>
+          <h2 class="font-display text-foreground text-3xl md:text-5xl font-medium leading-[1.1] text-balance">
+            Lo que vivís cuando subís a la <em class="italic font-light">lancha</em>.
+          </h2>
+          <div class="space-y-5 text-lg text-muted-foreground leading-relaxed">
+            ${exp.longDesc.map(p => `<p>${p}</p>`).join("")}
+          </div>
+        </div>
+        <aside class="lg:col-span-1">
+          <div class="sticky top-28 bg-card rounded-2xl p-7 shadow-card border border-border">
+            <div class="text-xs text-muted-foreground uppercase tracking-wide">Desde</div>
+            <div class="font-display text-4xl font-semibold text-foreground mb-1">${exp.price}</div>
+            <div class="text-sm text-muted-foreground mb-6">por embarcación · ${exp.duration}</div>
+            <a href="#reservar" class="w-full inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-full bg-ember text-ember-foreground text-sm font-semibold hover:opacity-90 transition-smooth">
+              Reservar fecha <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+            </a>
+            <div class="mt-6 pt-6 border-t border-border">
+              <div class="text-xs text-muted-foreground uppercase tracking-wide mb-3">Incluye</div>
+              <ul class="space-y-2.5">
+                ${exp.includes.map(item => `<li class="flex items-start gap-2.5 text-sm text-foreground/85"><i data-lucide="check" class="w-4 h-4 text-accent mt-0.5 shrink-0"></i>${item}</li>`).join("")}
+              </ul>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="pb-20 md:pb-28">
+      <div class="container">
+        ${exp.videos.map(v => `
+          <figure class="rounded-3xl overflow-hidden shadow-card bg-foreground">
+            <video src="${v.src}" poster="${v.poster}" autoplay muted loop playsinline preload="metadata" class="w-full h-auto aspect-video object-cover"></video>
+            <figcaption class="px-6 py-4 text-sm text-background/80 bg-foreground">${v.caption}</figcaption>
+          </figure>`).join("")}
+      </div>
+    </section>
+
+    <section class="pb-20 md:pb-28">
+      <div class="container">
+        <div class="max-w-2xl mb-10">
+          <span class="text-accent text-sm font-medium uppercase tracking-widest">Galería</span>
+          <h2 class="font-display text-foreground text-3xl md:text-5xl font-medium mt-3 leading-[1.1] text-balance">
+            Postales de salidas <em class="italic font-light">reales</em>.
+          </h2>
+        </div>
+        <div class="grid md:grid-cols-3 gap-4 md:gap-6">
+          ${exp.gallery.map((img, i) => `
+            <div class="rounded-2xl overflow-hidden shadow-card group foto ${i === 0 ? "md:col-span-2 md:row-span-2" : ""}">
+              ${imgTag(img, `${exp.title} foto ${i + 1}`, "w-full h-full object-cover aspect-[4/3] group-hover:scale-105 transition-smooth duration-700")}
+            </div>`).join("")}
+        </div>
+      </div>
+    </section>
+
+    <section class="pb-20 md:pb-28 bg-muted/40">
+      <div class="container py-20 md:py-28">
+        <div class="max-w-2xl mb-12">
+          <span class="text-accent text-sm font-medium uppercase tracking-widest">El plan</span>
+          <h2 class="font-display text-foreground text-3xl md:text-5xl font-medium mt-3 leading-[1.1] text-balance">
+            Cómo se vive el <em class="italic font-light">día</em>.
+          </h2>
+        </div>
+        <ol class="relative border-l-2 border-border ml-3 space-y-10">
+          ${exp.itinerary.map(step => `
+            <li class="pl-8 relative">
+              <span class="absolute -left-[11px] top-1 w-5 h-5 rounded-full bg-accent ring-4 ring-background"></span>
+              <div class="font-display text-2xl font-semibold text-foreground">${step.time}</div>
+              <div class="text-foreground font-medium mt-1">${step.title}</div>
+              <p class="text-muted-foreground mt-1">${step.desc}</p>
+            </li>`).join("")}
+        </ol>
+      </div>
+    </section>
+
+    <section class="py-20 md:py-28">
+      <div class="container">
+        <div class="rounded-3xl bg-gradient-deep p-10 md:p-16 text-center">
+          <h2 class="font-display text-background text-3xl md:text-5xl font-medium leading-[1.1] text-balance">
+            ¿Listo para vivir el <em class="italic font-light">Lácar</em>?
+          </h2>
+          <p class="text-background/80 mt-4 max-w-xl mx-auto">Reservá tu lugar con anticipación. Las fechas de temporada alta se llenan rápido.</p>
+          <a href="#reservar" class="inline-flex items-center gap-2 mt-8 px-7 py-4 rounded-full bg-ember text-ember-foreground font-semibold hover:opacity-90 transition-smooth">
+            Reservar ${exp.title} <i data-lucide="arrow-up-right" class="w-[18px] h-[18px]"></i>
+          </a>
+        </div>
+      </div>
+    </section>`;
+  document.title = `${exp.title} · Lácar`;
+  lucide.createIcons();
+}
+
+/* ================= NAVEGACIÓN ================= */
+function ruta() {
+  const h = location.hash;
+  const m = h.match(/^#\/experiencias\/(.+)$/);
+  const exp = m && experiences.find(e => e.slug === m[1]);
+  if (exp) {
+    $("#inicio").classList.add("hidden");
+    $("#detalle").classList.remove("hidden");
+    renderDetalle(exp);
+    window.scrollTo(0, 0);
+  } else {
+    const venia = !$("#detalle").classList.contains("hidden");
+    $("#detalle").classList.add("hidden");
+    $("#inicio").classList.remove("hidden");
+    document.title = TITULO_INICIO;
+    const destino = h.length > 1 && document.querySelector(h);
+    if (destino) destino.scrollIntoView();
+    else if (venia) window.scrollTo(0, 0);
+  }
+  cerrarMenu();
+  alScroll();
+}
+
+/* Navbar */
+const nav = $("#navbar"), menu = $("#menu-movil"), btn = $("#btn-menu");
+function alScroll() { nav.classList.toggle("scrolled", window.scrollY > 40); }
+function cerrarMenu() { menu.classList.add("hidden"); menu.classList.remove("flex"); toggleIcono(false); }
+function toggleIcono(abierto) {
+  btn.querySelector(".icono-abrir, [class*='lucide-menu']")?.classList.toggle("hidden", abierto);
+  btn.querySelector(".icono-cerrar, [class*='lucide-x']")?.classList.toggle("hidden", !abierto);
+}
+btn.addEventListener("click", () => {
+  const abierto = menu.classList.contains("hidden");
+  menu.classList.toggle("hidden", !abierto);
+  menu.classList.toggle("flex", abierto);
+  toggleIcono(abierto);
+});
+menu.querySelectorAll("a").forEach(a => a.addEventListener("click", cerrarMenu));
+window.addEventListener("scroll", alScroll);
+window.addEventListener("hashchange", ruta);
+
+/* Formulario: igual que en Lovable, muestra el aviso y limpia */
+$("#form-reserva").addEventListener("submit", (e) => {
+  e.preventDefault();
+  const t = $("#toast");
+  t.classList.remove("hidden");
+  setTimeout(() => t.classList.add("hidden"), 4000);
+  e.target.reset();
+  $("#f-personas").value = 2;
+});
+
+lucide.createIcons();
+ruta();
+</script>
+</body>
+</html>
