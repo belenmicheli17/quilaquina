@@ -177,7 +177,7 @@
         <p class="text-background/85 text-lg md:text-xl max-w-xl leading-relaxed mb-10">
           Pesca, navegación y aventuras de día completo en el corazón del Lago Lácar. 
           <br>
-      Experiencias guiadas por nativos que nacieron entre estas montañas.
+      Experiencias guiadas por gente que nació entre estas montañas.
         </p>
 
         <div class="flex flex-wrap gap-4">
@@ -192,7 +192,7 @@
       </div>
 
       <div class="mt-20 grid grid-cols-2 gap-6 max-w-2xl border-t border-background/20 pt-8">
-        <div><div class="font-display text-background text-3xl md:text-4xl font-semibold">+15</div><div class="text-background/70 text-xs md:text-sm uppercase tracking-wider mt-1">años navegando</div></div>
+        <div><div class="font-display text-background text-3xl md:text-4xl font-semibold">+35</div><div class="text-background/70 text-xs md:text-sm uppercase tracking-wider mt-1">años navegando</div></div>
       
         <div><div class="font-display text-background text-3xl md:text-4xl font-semibold">100%</div><div class="text-background/70 text-xs md:text-sm uppercase tracking-wider mt-1">equipo incluido</div></div>
       </div>
@@ -209,6 +209,25 @@
         </h2>
       </div>
       <div id="grilla-exp" class="grid lg:grid-cols-3 gap-6 md:gap-8"></div>
+
+      <!-- Traslados a playas -->
+      <div id="traslados" class="mt-8 rounded-2xl bg-primary text-background p-7 md:p-10 shadow-card flex flex-col lg:flex-row lg:items-center gap-6 lg:gap-10">
+        <div class="shrink-0 w-14 h-14 rounded-2xl bg-accent/20 flex items-center justify-center">
+          <i data-lucide="ship" class="text-accent w-7 h-7"></i>
+        </div>
+        <div class="flex-1">
+          <h3 class="font-display text-2xl md:text-3xl font-semibold">Traslados a playas del Lácar</h3>
+          <p class="text-background/80 leading-relaxed mt-2 max-w-2xl">Te llevamos en lancha a la playa que elijas. Decinos a dónde querés ir o pedinos una recomendación.</p>
+          <ul class="flex flex-col sm:flex-row sm:flex-wrap gap-x-8 gap-y-2 mt-4 text-sm text-background/85">
+            <li class="flex items-center gap-2"><i data-lucide="tag" class="text-accent w-4 h-4"></i>Precio según distancia y cantidad de personas</li>
+            <li class="flex items-center gap-2"><i data-lucide="calendar" class="text-accent w-4 h-4"></i>Fecha y horario a coordinar por WhatsApp</li>
+          </ul>
+        </div>
+        <a data-wa="¡Hola! Quería consultar por un traslado a playas del Lácar." target="_blank" rel="noopener"
+           class="shrink-0 inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full bg-ember text-ember-foreground font-semibold hover:opacity-90 transition-smooth">
+          Consultar traslado <i data-lucide="arrow-up-right" class="w-[18px] h-[18px]"></i>
+        </a>
+      </div>
     </div>
   </section>
 
@@ -223,10 +242,10 @@
             Tres generaciones <em class="italic font-light">en el mismo lago.</em>
           </h2>
           <p class="text-background/75 text-lg leading-relaxed mt-6 max-w-lg">
-            Desde hace 30 años navegamos el Lago Lácar compartiendo lo que amamos: el silencio del lago, la pesca al atardecer, el mate mientras el sol se esconde hacia el lado chileno.
+            Desde hace más de 35 años navegamos el Lago Lácar compartiendo lo que amamos: el silencio del agua, la pesca al atardecer, el mate mientras el sol se esconde hacia el lado chileno.
           </p>
           <p class="text-background/75 text-lg leading-relaxed mt-4 max-w-lg">
-            No somos una empresa de turismo. Somos una familia que ofrece salidas para que ustedes también sientan este lugar como propio.
+            No somos una empresa de turismo. Somos una familia que ofrece salidas para que vos también sientas este lugar como propio.
           </p>
         </div>
         <div id="valores" class="grid gap-5"></div>
@@ -257,7 +276,7 @@
             El lago te <em class="italic font-light">espera.</em>
           </h2>
           <p class="text-muted-foreground text-lg leading-relaxed mt-6 max-w-md">
-            Completá el formulario y te confirmamos disponibilidad por WhatsApp en pocas horas. Sin pagos por adelantado.
+            Completá el formulario y se abre WhatsApp con tu consulta lista para enviar. Te confirmamos disponibilidad en pocas horas. Sin pagos por adelantado.
           </p>
           <div class="mt-10 space-y-4">
             <div class="flex items-center gap-3 text-foreground/80"><i data-lucide="calendar" class="text-accent w-5 h-5"></i><span>Temporada activa: noviembre a mayo</span></div>
@@ -271,10 +290,6 @@
             <label class="block text-sm font-medium text-foreground mb-2" for="f-nombre">Tu nombre</label>
             <input id="f-nombre" required placeholder="Juan Pérez" class="campo w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-smooth">
           </div>
-          <div>
-            <label class="block text-sm font-medium text-foreground mb-2" for="f-email">Email</label>
-            <input id="f-email" required type="email" placeholder="juan@email.com" class="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-smooth">
-          </div>
           <div class="grid grid-cols-2 gap-4">
             <div>
               <label class="block text-sm font-medium text-foreground mb-2" for="f-fecha">Fecha</label>
@@ -286,18 +301,46 @@
             </div>
           </div>
           <div>
-            <label class="block text-sm font-medium text-foreground mb-2" for="f-exp">Experiencia</label>
-            <select id="f-exp" class="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-smooth">
-              <option value="salida-de-pesca">Pesca · 2 horas</option>
-              <option value="paseo-quila-quina">Paseo Quila Quina · 30 min</option>
-              <option value="aventura-familiar">Día completo familiar</option>
-            </select>
+            <label class="block text-sm font-medium text-foreground mb-2" id="f-exp-label">Experiencia</label>
+            <input type="hidden" id="f-exp" value="salida-de-pesca">
+            <div class="relative" id="selector-exp">
+              <button type="button" id="selector-btn" aria-haspopup="listbox" aria-expanded="false" aria-labelledby="f-exp-label selector-btn"
+                class="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl bg-background border border-border hover:border-accent/60 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-smooth text-left">
+                <span id="selector-icono" class="shrink-0 w-10 h-10 rounded-lg bg-accent/15 text-primary flex items-center justify-center"></span>
+                <span class="flex-1 min-w-0">
+                  <span id="selector-titulo" class="block font-medium text-foreground truncate"></span>
+                  <span id="selector-sub" class="block text-xs text-muted-foreground truncate"></span>
+                </span>
+                <i data-lucide="chevron-down" class="selector-flecha w-5 h-5 text-muted-foreground transition-smooth shrink-0"></i>
+              </button>
+              <ul id="selector-lista" role="listbox" tabindex="-1" aria-labelledby="f-exp-label"
+                class="hidden absolute z-20 left-0 right-0 mt-2 p-2 bg-card border border-border rounded-2xl shadow-card outline-none"></ul>
+            </div>
           </div>
           <button type="submit" class="w-full py-4 rounded-xl bg-ember text-ember-foreground font-semibold shadow-glow hover:scale-[1.02] transition-smooth inline-flex items-center justify-center gap-2">
-            Solicitar reserva
+            Enviar por WhatsApp
             <i data-lucide="send" class="w-[18px] h-[18px]"></i>
           </button>
         </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CABAÑA ================= -->
+  <section id="cabana" class="pb-24 md:pb-32 bg-background">
+    <div class="container">
+      <div class="max-w-6xl mx-auto rounded-3xl border border-border bg-secondary/40 p-6 md:p-8 flex flex-col md:flex-row md:items-center gap-5 md:gap-8">
+        <div class="shrink-0 w-12 h-12 rounded-xl bg-accent/20 flex items-center justify-center">
+          <i data-lucide="house" class="text-primary w-6 h-6"></i>
+        </div>
+        <div class="flex-1">
+          <h3 class="font-display text-2xl font-semibold text-foreground">¿Te quedás unos días?</h3>
+          <p class="text-muted-foreground leading-relaxed mt-1">También tenemos una cabaña en San Martín de los Andes, ideal para combinar con las salidas.</p>
+        </div>
+        <a data-wa="¡Hola! Quería consultar por la cabaña en San Martín de los Andes." target="_blank" rel="noopener"
+           class="shrink-0 inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full border border-foreground/20 text-foreground font-semibold hover:bg-foreground hover:text-background transition-smooth">
+          Consultar la cabaña <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+        </a>
       </div>
     </div>
   </section>
@@ -312,7 +355,7 @@
     <div class="grid md:grid-cols-3 gap-12 mb-12">
       <div>
         <div class="font-display text-3xl font-semibold mb-3">Lácar<span class="text-accent">.</span></div>
-        <p class="text-background/60 leading-relaxed">Salidas guiadas en el Lago Lácar desde 1991 Patagonia auténtica.</p>
+        <p class="text-background/60 leading-relaxed">Salidas guiadas en el Lago Lácar desde 1991. Patagonia auténtica.</p>
       </div>
       <div>
         <h4 class="font-semibold mb-4 text-sm uppercase tracking-wider text-background/80">Navegá</h4>
@@ -326,9 +369,9 @@
       <div>
         <h4 class="font-semibold mb-4 text-sm uppercase tracking-wider text-background/80">Seguinos</h4>
         <div class="flex gap-3">
-          <a href="#" aria-label="Instagram" class="w-10 h-10 rounded-full bg-background/10 flex items-center justify-center hover:bg-accent hover:text-foreground transition-smooth"><i data-lucide="instagram" class="w-[18px] h-[18px]"></i></a>
-          <a href="#" aria-label="Facebook" class="w-10 h-10 rounded-full bg-background/10 flex items-center justify-center hover:bg-accent hover:text-foreground transition-smooth"><i data-lucide="facebook" class="w-[18px] h-[18px]"></i></a>
-          <a href="#" aria-label="WhatsApp" class="w-10 h-10 rounded-full bg-background/10 flex items-center justify-center hover:bg-accent hover:text-foreground transition-smooth"><i data-lucide="message-circle" class="w-[18px] h-[18px]"></i></a>
+          <a href="https://www.instagram.com/pesca.lacar/" target="_blank" rel="noopener" aria-label="Instagram" class="w-10 h-10 rounded-full bg-background/10 flex items-center justify-center hover:bg-accent hover:text-foreground transition-smooth"><i data-lucide="instagram" class="w-[18px] h-[18px]"></i></a>
+          <a href="https://www.facebook.com/omar.moralespesca" target="_blank" rel="noopener" aria-label="Facebook" class="w-10 h-10 rounded-full bg-background/10 flex items-center justify-center hover:bg-accent hover:text-foreground transition-smooth"><i data-lucide="facebook" class="w-[18px] h-[18px]"></i></a>
+          <a data-wa="¡Hola! Quería hacer una consulta sobre las salidas en el Lácar." target="_blank" rel="noopener" aria-label="WhatsApp" class="w-10 h-10 rounded-full bg-background/10 flex items-center justify-center hover:bg-accent hover:text-foreground transition-smooth"><i data-lucide="message-circle" class="w-[18px] h-[18px]"></i></a>
         </div>
         <p class="text-background/50 text-sm mt-6">Muelle Quila Quina<br>San Martín de los Andes, Neuquén</p>
       </div>
@@ -340,10 +383,16 @@
   </div>
 </footer>
 
+<!-- ================= BOTÓN FLOTANTE DE WHATSAPP ================= -->
+<a id="wa-flotante" data-wa="¡Hola! Quería hacer una consulta sobre las salidas en el Lácar." target="_blank" rel="noopener" aria-label="Escribinos por WhatsApp"
+   class="fixed bottom-5 right-5 md:bottom-6 md:right-6 z-[55] w-14 h-14 rounded-full bg-[#25D366] text-white flex items-center justify-center shadow-card hover:scale-110 transition-smooth">
+  <svg viewBox="0 0 24 24" width="30" height="30" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+</a>
+
 <!-- Aviso de reserva recibida -->
-<div id="toast" class="hidden fixed bottom-6 right-6 z-[60] bg-card border border-border shadow-card rounded-xl px-5 py-4 max-w-sm">
-  <div class="font-semibold text-foreground text-sm">¡Reserva recibida!</div>
-  <div class="text-muted-foreground text-sm mt-1">Te contactamos en menos de 2 horas para confirmar.</div>
+<div id="toast" class="hidden fixed bottom-24 right-6 z-[60] bg-card border border-border shadow-card rounded-xl px-5 py-4 max-w-sm">
+  <div class="font-semibold text-foreground text-sm">¡Listo! Se abrió WhatsApp</div>
+  <div class="text-muted-foreground text-sm mt-1">Tu consulta ya está escrita, solo falta tocar enviar.</div>
 </div>
 
 <script>
@@ -362,18 +411,18 @@ const experiences = [
     desc: "Embarcación, cañas, señuelos y guía nativo. Trolling y spinning en los puntos más productivos del lago.",
     longDesc: [
       "Salimos idealmente al amanecer o al atardecer, los dos momentos en los que las truchas más pican. Nuestro guía conoce el Lácar a fondo: sabe dónde están las corrientes frías, los desniveles del fondo y los puntos donde más peces hay según el horario y el clima del día.",
-      "Vas a pescar truchas Arcoíris, Perca, Marrones y Salmon encerrado de gran porte. Se puede sacrificar una pieza por persona/por día y te la entregamos lista para cocinarla.",
+      "Vas a pescar truchas arcoíris y marrones, percas y salmones encerrados de gran porte. Se puede sacrificar una pieza por persona por día y te la entregamos lista para cocinarla.",
       "No hace falta experiencia previa: si es tu primera vez, te enseñamos. Si sos pescador experimentado, vas a disfrutar de los rincones más productivos del lago.",
-      "Te damos equipo completo para spinning y trolling, podes traer tu equipo de mosca si sabes pescar"
+      "Te damos equipo completo para spinning y trolling. Si sabés pescar con mosca, podés traer tu equipo."
     ],
-    features: ["Equipo completo de pesca", "Guía especializado", "Te llevas tus truchas"],
+    features: ["Equipo completo de pesca", "Guía especializado", "Te llevás tu trucha"],
     includes: ["Embarcación con motor 4 tiempos", "Cañas, reels y señuelos", "Posibilidad de acompañante bilingüe",
                "Chalecos salvavidas para todos"],
     itinerary: [
-      { time: "06:30", title: "Encuentro en el muelle", desc: "Briefing de seguridad y armado de equipos." },
-      { time: "07:00", title: "Navegación a la zona de pesca", desc: "Trolling sobre las primeras corrientes." },
-      { time: "08:00", title: "Spinning desde la costa", desc: "Lanzamientos en bahías." },
-      { time: "09:00", title: "Regreso al muelle", desc: "Foto con las capturas y café caliente." }
+      { time: "07:00", title: "Encuentro en el muelle", desc: "Instrucciones de seguridad y armado de equipos." },
+      { time: "07:30", title: "Navegación a la zona de pesca", desc: "Trolling sobre las primeras corrientes." },
+      { time: "08:00", title: "Spinning hacia la costa", desc: "Lanzamientos en bahías." },
+      { time: "09:00", title: "Regreso al muelle", desc: "Limpieza de las truchas listas para llevártelas." }
     ],
     price: "$400.000"
   },
@@ -385,23 +434,24 @@ const experiences = [
     icon: "anchor",
     tag: "Clásico imperdible",
     title: "Paseo por Quila Quina",
-    duration: "40 minutos",
+    duration: "35-40 min",
     capacity: "Hasta 6 personas",
-    desc: "Recorré la bahía más fotografiada del Lácar a bordo de nuestra lancha. Aguas turquesas, costas de Pataguas (arbol nativo) y vistas únicas del cerro Abanico.",
+    desc: "Recorré la bahía más fotografiada del Lácar a bordo de nuestra lancha. Aguas turquesas, costas de pataguas (árbol nativo) y vistas únicas del cerro Abanico.",
     longDesc: [
-      "Es el paseo perfecto si tenés poco tiempo y querés sentir el lago en su máxima expresión. En 40 minutos recorremis la bahía de Quila Quina, una de las postales más reconocidas de la Patagonia.",
-      "Vas a ver el agua cambiar de turquesa a azul profundo según la profundidad y las Pataguas (arboles milenarios) sumergidos en el agua. El imponente cerro Abanico visto desde abajo, una experiencia única.",
+      "Es el paseo perfecto si tenés poco tiempo y querés sentir el lago en su máxima expresión. En 35 a 40 minutos, según el clima, recorremos la bahía de Quila Quina, una de las postales más reconocidas de la Patagonia.",
+      "Vas a ver el agua cambiar de turquesa a azul profundo según la profundidad y las pataguas (árboles milenarios) sumergidas en el agua. El imponente cerro Abanico visto desde abajo, una experiencia única.",
       "Salimos cada hora de 9 a 20 hs. Ideal para niños."
     ],
     features: ["Salidas cada hora", "Chalecos para todos", "Apto niños"],
     includes: ["Lancha espaciosa para poder moverse y bancos", "Guía con datos del lago y la región", "Chalecos salvavidas (inclusive talles infantiles)", "Foto grupal con el cerro Abanico"],
     itinerary: [
       { time: "00:00", title: "Salida del muelle", desc: "Bienvenida y entrega de chalecos." },
-      { time: "00:20", title: "Cerro Abanico", desc: "Vistas panorámicas del lago, datos sobre nuestra naturaleza y fotos." },
-      { time: "00:40", title: "Costa de Quila Quina", desc: "Vistas a todas las playas y arroyos." },
-      { time: "00:45", title: "Regreso", desc: "Vuelta al muelle." }
+      { time: "00:15", title: "Cerro Abanico", desc: "Vistas panorámicas del lago, datos sobre nuestra naturaleza y fotos." },
+      { time: "00:30", title: "Costa de Quila Quina", desc: "Vistas a todas las playas y arroyos." },
+      { time: "00:40", title: "Regreso", desc: "Vuelta al muelle." }
     ],
-    price: "$50.000"
+    price: "$50.000",
+    priceUnit: "por persona"
   },
   {
     slug: "aventura-familiar",
@@ -410,31 +460,31 @@ const experiences = [
     gallery: ["img/familia.jpg", "img/familia-2.jpg", "img/familia-3.jpg"],
     icon: "sun",
     tag: "Día completo",
-    title: "Aventura familiar - día completo",
+    title: "Aventura familiar",
     duration: "8 horas",
-    capacity: "Familias o grupos hasta 12 personas",
+    capacity: "Hasta 12 personas",
     desc: "Navegación a playas escondidas, almuerzo casero a la orilla del lago, tiempo libre para nadar, caminar y explorar. La experiencia más completa.",
     longDesc: [
-      "Un día entero para desconectar y vivir el Lácar como pocos lo conocen. Salimos temprano, navegamos a una playa privada que solo se accede por agua, y montamos un campamento base con mesas, reposeras y sombra.",
-      "El almuerzo es de campo: cordero patagónico al asador, tablas de quesos regionales, vinos de la zona y postres caseros. Todo preparado por nuestro cocinero a la orilla del lago.",
-      "Después del almuerzo tenés tiempo libre para nadar, hacer una caminata corta por el bosque, intentar la pesca con caña o simplemente leer una hora bajo los árboles. Volvemos al atardecer."
+      "Un día entero para desconectar y vivir el Lácar como pocos lo conocen. Salimos temprano, navegamos a una playa privada a la que solo se accede por agua, y nos organizamos para cocinar el almuerzo al fuego en el momento.",
+      "El almuerzo es casero, con toque gourmet: empanadas caseras, tablas de quesos regionales, vinos de la zona y postres caseros. Todo preparado por nuestro cocinero a la orilla del lago.",
+      "Después del almuerzo tenés tiempo libre para nadar, hacer una caminata corta por el bosque o simplemente disfrutar la vista. Volvemos al atardecer."
     ],
-    features: ["Almuerzo gourmet incluido", "Bebidas", "Playas privadas"],
-    includes: ["Navegación de ida y vuelta a playa privada", "Almuerzo de campo (cordero al asador o vegetariano)", "Vinos, cerveza artesanal y bebidas sin alcohol", "Reposeras, mesas, sombrillas y mantas", "Equipo de pesca recreativa para chicos", "Caminata guiada opcional por el bosque"],
+    features: ["Almuerzo casero gourmet", "Bebidas", "Playas privadas"],
+    includes: ["Navegación de ida y vuelta a playa privada", "Almuerzo de campo", "Vinos, cerveza y bebidas sin alcohol", "Caminata opcional por el bosque"],
     itinerary: [
-      { time: "10:00", title: "Embarque", desc: "Bienvenida con café y medialunas." },
-      { time: "10:30", title: "Navegación a playa privada", desc: "Recorrido por bahías escondidas." },
-      { time: "12:00", title: "Tiempo libre", desc: "Nado, caminata o pesca recreativa." },
-      { time: "13:30", title: "Almuerzo a la orilla", desc: "Cordero al asador y vinos regionales." },
-      { time: "15:30", title: "Siesta y descanso", desc: "Reposeras a la sombra del bosque." },
-      { time: "17:30", title: "Regreso al atardecer", desc: "Navegación con luz dorada." }
+      { time: "10:00", title: "Embarque", desc: "Bienvenida y preparación de la lancha." },
+      { time: "10:30", title: "Navegación hacia playa privada", desc: "Recorrido por bahías escondidas." },
+      { time: "12:00", title: "Tiempo libre", desc: "Nado, caminata o tiempo recreativo." },
+      { time: "13:30", title: "Almuerzo a la orilla", desc: "Menú a confirmar." },
+      { time: "15:30", title: "Descanso", desc: "Siesta a la sombra del bosque." },
+      { time: "17:30", title: "Regreso al atardecer", desc: "Navegación y paseo." }
     ],
-    price: "usd1000"
+    price: "USD 1.000"
   }
 ];
 
 const values = [
-  { icon: "compass", title: "Familia local", desc: "Nacimos y crecimos en el Lácar. Conocemos cada rincon, cada corriente, cada spot para tener el mejor pique en la pesca." },
+  { icon: "compass", title: "Familia local", desc: "Nacimos y crecimos en el Lácar. Conocemos cada rincón, cada corriente, cada spot para tener el mejor pique en la pesca." },
   { icon: "shield", title: "Seguridad total", desc: "Embarcaciones habilitadas por Prefectura. Equipos certificados y revisados a diario, carnets al día." },
   { icon: "heart", title: "Sin apuros", desc: "Grupos chicos. Tiempo para detenerse, sacar fotos, mirar y respirar. La Patagonia no se apura." }
 ];
@@ -443,6 +493,26 @@ const reviews = [
   { name: "Martina G.", place: "Buenos Aires", text: "Salimos a pescar con mi viejo y fue de las mejores mañanas de mi vida. El guía nos conocía la zona como la palma de la mano. Sacamos tres truchas hermosas." },
   { name: "Familia Rossi", place: "Córdoba", text: "El día completo fue una locura. Los chicos no querían volver. La playa, el almuerzo, el agua turquesa… inolvidable." },
   { name: "Luca P.", place: "Italia", text: "Quila Quina desde la lancha es otra cosa. Media hora que vale cada peso. Volvería mañana mismo." }
+];
+
+/* ================= WHATSAPP =================
+   Número para todos los botones y el formulario (sin +, espacios ni guiones).
+   Si lo cambiás, cambialo también en el texto de contacto de la sección Reservar. */
+const WHATSAPP = "5492972531559";
+const linkWA = (mensaje) => `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(mensaje)}`;
+document.querySelectorAll("[data-wa]").forEach(a => a.href = linkWA(a.dataset.wa));
+
+/* Opciones del formulario: las experiencias + el traslado.
+   "frase" es cómo aparece en el mensaje de WhatsApp. */
+const frases = {
+  "salida-de-pesca": "una salida de pesca",
+  "paseo-quila-quina": "el paseo por Quila Quina",
+  "aventura-familiar": "la aventura familiar de día completo",
+  "traslado": "un traslado a playas del Lácar"
+};
+const opcionesForm = [
+  ...experiences,
+  { slug: "traslado", icon: "ship", title: "Traslado a playas", sub: "Precio según distancia y personas" }
 ];
 
 /* ================= ARMADO DE LA PÁGINA ================= */
@@ -474,6 +544,7 @@ $("#grilla-exp").innerHTML = experiences.map(exp => `
         <div>
           <div class="text-xs text-muted-foreground uppercase tracking-wide">Desde</div>
           <div class="font-display text-2xl font-semibold text-foreground">${exp.price}</div>
+          ${exp.priceUnit ? `<div class="text-xs text-muted-foreground mt-0.5">${exp.priceUnit}</div>` : ""}
         </div>
         <span class="inline-flex items-center gap-1 px-5 py-3 rounded-full bg-foreground text-background text-sm font-semibold group-hover:bg-primary transition-smooth">
           Ver más <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
@@ -502,6 +573,70 @@ $("#grilla-test").innerHTML = reviews.map(r => `
     </div>
   </div>`).join("");
 
+/* ================= SELECTOR DE EXPERIENCIAS (formulario) ================= */
+const selBtn = $("#selector-btn"), selLista = $("#selector-lista"), selInput = $("#f-exp");
+let selActivo = 0;
+const subTexto = (e) => e.sub || `${e.duration} · Desde ${e.price}${e.priceUnit ? " " + e.priceUnit : ""}`;
+
+function elegirExp(slug) {
+  const e = opcionesForm.find(x => x.slug === slug) || opcionesForm[0];
+  selInput.value = e.slug;
+  $("#selector-icono").innerHTML = `<i data-lucide="${e.icon}" class="w-[18px] h-[18px]"></i>`;
+  $("#selector-titulo").textContent = e.title;
+  $("#selector-sub").textContent = subTexto(e);
+  lucide.createIcons();
+}
+function pintarLista() {
+  selLista.innerHTML = opcionesForm.map((e, i) => {
+    const elegida = e.slug === selInput.value;
+    return `<li role="option" id="op-${e.slug}" data-slug="${e.slug}" aria-selected="${elegida}"
+      class="flex items-center gap-3 px-3 py-2.5 rounded-xl cursor-pointer transition-smooth hover:bg-muted ${i === selActivo ? "bg-muted" : ""}">
+      <span class="shrink-0 w-10 h-10 rounded-lg flex items-center justify-center ${elegida ? "bg-accent text-background" : "bg-accent/15 text-primary"}">
+        <i data-lucide="${e.icon}" class="w-[18px] h-[18px]"></i>
+      </span>
+      <span class="flex-1 min-w-0">
+        <span class="block font-medium text-foreground">${e.title}</span>
+        <span class="block text-xs text-muted-foreground">${subTexto(e)}</span>
+      </span>
+      ${elegida ? '<i data-lucide="check" class="w-4 h-4 text-accent shrink-0"></i>' : ""}
+    </li>`;
+  }).join("");
+  selLista.setAttribute("aria-activedescendant", `op-${opcionesForm[selActivo].slug}`);
+  lucide.createIcons();
+}
+function abrirSel() {
+  selActivo = Math.max(0, opcionesForm.findIndex(e => e.slug === selInput.value));
+  pintarLista();
+  selLista.classList.remove("hidden");
+  selBtn.setAttribute("aria-expanded", "true");
+  selBtn.querySelector(".selector-flecha")?.classList.add("rotate-180");
+  selLista.focus();
+}
+function cerrarSel(devolverFoco = true) {
+  selLista.classList.add("hidden");
+  selBtn.setAttribute("aria-expanded", "false");
+  selBtn.querySelector(".selector-flecha")?.classList.remove("rotate-180");
+  if (devolverFoco) selBtn.focus();
+}
+selBtn.addEventListener("click", () => selLista.classList.contains("hidden") ? abrirSel() : cerrarSel());
+selBtn.addEventListener("keydown", (e) => { if (e.key === "ArrowDown" || e.key === "ArrowUp") { e.preventDefault(); abrirSel(); } });
+selLista.addEventListener("click", (e) => {
+  const li = e.target.closest("[data-slug]");
+  if (li) { elegirExp(li.dataset.slug); cerrarSel(); }
+});
+selLista.addEventListener("keydown", (e) => {
+  const n = opcionesForm.length;
+  if (e.key === "ArrowDown") { e.preventDefault(); selActivo = (selActivo + 1) % n; pintarLista(); }
+  else if (e.key === "ArrowUp") { e.preventDefault(); selActivo = (selActivo - 1 + n) % n; pintarLista(); }
+  else if (e.key === "Enter" || e.key === " ") { e.preventDefault(); elegirExp(opcionesForm[selActivo].slug); cerrarSel(); }
+  else if (e.key === "Escape") { e.preventDefault(); cerrarSel(); }
+  else if (e.key === "Tab") { cerrarSel(false); }
+});
+document.addEventListener("click", (e) => {
+  if (!selLista.classList.contains("hidden") && !$("#selector-exp").contains(e.target)) cerrarSel(false);
+});
+elegirExp(opcionesForm[0].slug);
+
 /* ===== Página de detalle (copiada de ExperienceDetail.tsx) ===== */
 function renderDetalle(exp) {
   $("#detalle").innerHTML = `
@@ -517,7 +652,7 @@ function renderDetalle(exp) {
         <div class="flex flex-wrap items-center gap-6 mt-6 text-background/90">
           <span class="flex items-center gap-2"><i data-lucide="clock" class="w-[18px] h-[18px]"></i> ${exp.duration}</span>
           <span class="flex items-center gap-2"><i data-lucide="users" class="w-[18px] h-[18px]"></i> ${exp.capacity}</span>
-          <span class="flex items-center gap-2"><i data-lucide="${exp.icon}" class="w-[18px] h-[18px]"></i> Desde ${exp.price}</span>
+          <span class="flex items-center gap-2"><i data-lucide="${exp.icon}" class="w-[18px] h-[18px]"></i> Desde ${exp.price}${exp.priceUnit ? " " + exp.priceUnit : ""}</span>
         </div>
       </div>
     </section>
@@ -537,7 +672,7 @@ function renderDetalle(exp) {
           <div class="sticky top-28 bg-card rounded-2xl p-7 shadow-card border border-border">
             <div class="text-xs text-muted-foreground uppercase tracking-wide">Desde</div>
             <div class="font-display text-4xl font-semibold text-foreground mb-1">${exp.price}</div>
-            <div class="text-sm text-muted-foreground mb-6">por embarcación · ${exp.duration}</div>
+            <div class="text-sm text-muted-foreground mb-6">${exp.priceUnit || "por embarcación"} · ${exp.duration}</div>
             <a href="#reservar" class="w-full inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-full bg-ember text-ember-foreground text-sm font-semibold hover:opacity-90 transition-smooth">
               Reservar fecha <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
             </a>
@@ -657,14 +792,22 @@ menu.querySelectorAll("a").forEach(a => a.addEventListener("click", cerrarMenu))
 window.addEventListener("scroll", alScroll);
 window.addEventListener("hashchange", ruta);
 
-/* Formulario: igual que en Lovable, muestra el aviso y limpia */
+/* Formulario: arma el mensaje y abre WhatsApp */
 $("#form-reserva").addEventListener("submit", (e) => {
   e.preventDefault();
+  const nombre = $("#f-nombre").value.trim();
+  const [a, m, d] = $("#f-fecha").value.split("-");
+  const n = Number($("#f-personas").value);
+  const que = frases[$("#f-exp").value] || "una salida";
+  const mensaje = `¡Hola! Mi nombre es ${nombre}. Me interesa ${que} para el ${d}/${m}/${a}, para ${n} ${n === 1 ? "persona" : "personas"}. ¿Tienen disponibilidad?`;
+  const url = linkWA(mensaje);
+  if (!window.open(url, "_blank")) location.href = url;
   const t = $("#toast");
   t.classList.remove("hidden");
   setTimeout(() => t.classList.add("hidden"), 4000);
   e.target.reset();
   $("#f-personas").value = 2;
+  elegirExp(opcionesForm[0].slug);
 });
 
 lucide.createIcons();
