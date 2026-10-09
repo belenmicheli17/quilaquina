@@ -115,6 +115,8 @@
     .shadow-glow { box-shadow: var(--shadow-glow); }
     .transition-smooth { transition: all 0.4s var(--transition-smooth); }
     /* agregado solo para cuando falta una foto */
+    .sin-barra { scrollbar-width: none; }
+    .sin-barra::-webkit-scrollbar { display: none; }
     .foto { background: linear-gradient(160deg, hsl(var(--primary-glow)), hsl(var(--primary))); }
   }
   @keyframes fade-up {
@@ -266,10 +268,8 @@
       </div>
       <div data-lightbox class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
         <div class="rounded-2xl overflow-hidden foto col-span-2 md:col-span-4 aspect-[2/1] md:aspect-[3/1]"><img src="img/muelle-panoramica.jpg" alt="Muelle de Quila Quina con la cordillera nevada" loading="lazy" class="w-full h-full object-cover hover:scale-105 transition-smooth duration-700" onerror="this.remove()"></div>
-        <div class="rounded-2xl overflow-hidden foto aspect-square"><img src="img/abanico.jpg" alt="Paredón del cerro Abanico sobre el Lácar" loading="lazy" class="w-full h-full object-cover hover:scale-105 transition-smooth duration-700" onerror="this.remove()"></div>
-        <div class="rounded-2xl overflow-hidden foto aspect-square"><img src="img/lancha-3.jpg" alt="Muelle de Quila Quina" loading="lazy" class="w-full h-full object-cover hover:scale-105 transition-smooth duration-700" onerror="this.remove()"></div>
-        <div class="rounded-2xl overflow-hidden foto aspect-square"><img src="img/lancha.jpg" alt="Lancha al atardecer en el Lácar" loading="lazy" class="w-full h-full object-cover hover:scale-105 transition-smooth duration-700" onerror="this.remove()"></div>
-        <div class="rounded-2xl overflow-hidden foto aspect-square"><img src="img/lancha-2.jpg" alt="Lancha en el agua transparente junto al muelle" loading="lazy" class="w-full h-full object-cover hover:scale-105 transition-smooth duration-700" onerror="this.remove()"></div>
+        <div class="rounded-2xl overflow-hidden foto aspect-[4/3] md:col-span-2"><img src="img/abanico.jpg" alt="Paredón del cerro Abanico sobre el Lácar" loading="lazy" class="w-full h-full object-cover hover:scale-105 transition-smooth duration-700" onerror="this.remove()"></div>
+        <div class="rounded-2xl overflow-hidden foto aspect-[4/3] md:col-span-2"><img src="img/lancha-3.jpg" alt="Muelle de Quila Quina" loading="lazy" class="w-full h-full object-cover hover:scale-105 transition-smooth duration-700" onerror="this.remove()"></div>
       </div>
     </div>
   </section>
@@ -283,7 +283,7 @@
           Quienes ya navegaron <em class="italic font-light">con nosotros.</em>
         </h2>
       </div>
-      <div id="grilla-test" class="grid md:grid-cols-3 gap-6"></div>
+      <div id="grilla-test" class="flex md:grid md:grid-cols-3 gap-4 md:gap-6 overflow-x-auto md:overflow-visible snap-x snap-mandatory -mx-8 px-8 md:mx-0 md:px-0 pb-4 md:pb-0 sin-barra"></div>
     </div>
   </section>
 
@@ -432,6 +432,7 @@ const experiences = [
     slug: "salida-de-pesca",
     videos: [{ src: "videos/pesca.mp4", poster: "img/pesca-video.jpg", caption: "Lanzando al atardecer en una bahía del Lácar.", vertical: true }],
     img: "img/pesca.jpg",
+    cover: "img/lancha-2.jpg",
     gallery: ["img/pesca.jpg"],
     icon: "fish",
     tag: "Para pescadores",
@@ -460,7 +461,7 @@ const experiences = [
     slug: "paseo-quila-quina",
     videos: [{ src: "videos/paseo.mp4", poster: "img/paseo-video.jpg", caption: "El cerro Abanico visto desde la lancha.", vertical: true }],
     img: "img/lancha.jpg",
-    gallery: ["img/lancha.jpg", "img/lancha-2.jpg", "img/abanico.jpg"],
+    gallery: ["img/lancha.jpg"],
     icon: "anchor",
     tag: "Clásico imperdible",
     title: "Paseo por Quila Quina",
@@ -579,7 +580,7 @@ $("#grilla-exp").innerHTML = experiences.map(exp => `
       </div>
       <h3 class="font-display text-2xl md:text-3xl font-semibold text-foreground mb-3 group-hover:text-primary transition-smooth">${exp.title}</h3>
       <p class="text-muted-foreground leading-relaxed mb-5">${exp.desc}</p>
-      <ul class="space-y-2 mb-6">
+      <ul class="hidden md:block space-y-2 mb-6">
         ${exp.features.map(f => `<li class="flex items-center gap-2 text-sm text-foreground/80"><span class="w-1.5 h-1.5 rounded-full bg-accent"></span>${f}</li>`).join("")}
       </ul>
       <div class="mt-auto pt-5 border-t border-border flex items-end justify-between">
@@ -606,7 +607,7 @@ $("#valores").innerHTML = values.map(v => `
 
 const estrella = `<svg width="16" height="16" viewBox="0 0 24 24" fill="hsl(var(--ember))" stroke="hsl(var(--ember))" stroke-width="2" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>`;
 $("#grilla-test").innerHTML = reviews.map(r => `
-  <div class="bg-background p-8 rounded-2xl shadow-soft border border-border/50">
+  <div class="shrink-0 w-[82%] md:w-auto snap-center bg-background p-7 md:p-8 rounded-2xl shadow-soft border border-border/50">
     <div class="flex gap-0.5 mb-4">${estrella.repeat(5)}</div>
     <p class="font-display text-xl text-foreground leading-snug mb-6 text-balance">"${r.text}"</p>
     <div class="pt-4 border-t border-border">
@@ -682,10 +683,10 @@ elegirExp(opcionesForm[0].slug);
 /* ===== Página de detalle (copiada de ExperienceDetail.tsx) ===== */
 function renderDetalle(exp) {
   $("#detalle").innerHTML = `
-    <section class="relative h-[70vh] min-h-[520px] w-full overflow-hidden foto">
-      ${imgTag(exp.gallery[0], exp.title, "absolute inset-0 w-full h-full object-cover")}
+    <section class="relative h-[60vh] min-h-[440px] md:h-[70vh] md:min-h-[520px] w-full overflow-hidden foto">
+      ${imgTag(exp.cover || exp.gallery[0], exp.title, "absolute inset-0 w-full h-full object-cover")}
       <div class="absolute inset-0 bg-gradient-hero"></div>
-      <div class="container relative h-full flex flex-col justify-end pb-16 md:pb-24">
+      <div class="container relative h-full flex flex-col justify-end pb-10 md:pb-24">
         <a href="#experiencias" class="inline-flex items-center gap-2 text-background/90 text-sm font-medium mb-6 hover:text-accent transition-smooth w-fit">
           <i data-lucide="arrow-left" class="w-4 h-4"></i> Volver a experiencias
         </a>
@@ -699,8 +700,8 @@ function renderDetalle(exp) {
       </div>
     </section>
 
-    <section class="py-20 md:py-28">
-      <div class="container grid lg:grid-cols-3 gap-12">
+    <section class="py-12 md:py-28">
+      <div class="container grid lg:grid-cols-3 gap-8 md:gap-12">
         <div class="lg:col-span-2 space-y-6">
           <span class="text-accent text-sm font-medium uppercase tracking-widest">Sobre la experiencia</span>
           <h2 class="font-display text-foreground text-3xl md:text-5xl font-medium leading-[1.1] text-balance">
@@ -729,7 +730,7 @@ function renderDetalle(exp) {
       </div>
     </section>
 
-    ${exp.videos.length ? `<section class="pb-20 md:pb-28">
+    ${exp.videos.length ? `<section class="pb-12 md:pb-28">
       <div class="container">
         ${exp.videos.map(v => `
           <figure class="rounded-3xl overflow-hidden shadow-card bg-foreground ${v.vertical ? "max-w-md mx-auto" : ""}">
@@ -739,9 +740,9 @@ function renderDetalle(exp) {
       </div>
     </section>` : ""}
 
-    <section class="pb-20 md:pb-28">
+    <section class="pb-12 md:pb-28">
       <div class="container">
-        <div class="max-w-2xl mb-10">
+        <div class="max-w-2xl mb-6 md:mb-10">
           <span class="text-accent text-sm font-medium uppercase tracking-widest">Galería</span>
           <h2 class="font-display text-foreground text-3xl md:text-5xl font-medium mt-3 leading-[1.1] text-balance">
             Postales de salidas <em class="italic font-light">reales</em>.
@@ -756,15 +757,15 @@ function renderDetalle(exp) {
       </div>
     </section>
 
-    <section class="pb-20 md:pb-28 bg-muted/40">
-      <div class="container py-20 md:py-28">
-        <div class="max-w-2xl mb-12">
+    <section class="md:pb-28 bg-muted/40">
+      <div class="container py-12 md:py-28">
+        <div class="max-w-2xl mb-8 md:mb-12">
           <span class="text-accent text-sm font-medium uppercase tracking-widest">El plan</span>
           <h2 class="font-display text-foreground text-3xl md:text-5xl font-medium mt-3 leading-[1.1] text-balance">
             Cómo se vive el <em class="italic font-light">día</em>.
           </h2>
         </div>
-        <ol class="relative border-l-2 border-border ml-3 space-y-10">
+        <ol class="relative border-l-2 border-border ml-3 space-y-6 md:space-y-10">
           ${exp.itinerary.map(step => `
             <li class="pl-8 relative">
               <span class="absolute -left-[11px] top-1 w-5 h-5 rounded-full bg-accent ring-4 ring-background"></span>
@@ -776,9 +777,9 @@ function renderDetalle(exp) {
       </div>
     </section>
 
-    <section class="py-20 md:py-28">
+    <section class="py-12 md:py-28">
       <div class="container">
-        <div class="rounded-3xl bg-gradient-deep p-10 md:p-16 text-center">
+        <div class="rounded-3xl bg-gradient-deep px-6 py-10 md:p-16 text-center">
           <h2 class="font-display text-background text-3xl md:text-5xl font-medium leading-[1.1] text-balance">
             ¿Listo para vivir el <em class="italic font-light">Lácar</em>?
           </h2>
