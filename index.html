@@ -92,7 +92,9 @@
     html { scroll-behavior: smooth; }
     /* En compu (desde 1024px) todo un poco más chico */
     @media (min-width: 1024px) { html { font-size: 15px; } }
+    @supports (overflow-x: clip) { body { overflow-x: clip; } }
     body {
+      overflow-x: hidden;
       @apply bg-background text-foreground;
       font-family: 'Inter', sans-serif;
       -webkit-font-smoothing: antialiased;
@@ -304,19 +306,19 @@
           </div>
         </div>
 
-        <form id="form-reserva" class="bg-card p-8 md:p-10 rounded-3xl shadow-card border border-border space-y-5">
+        <form id="form-reserva" class="min-w-0 bg-card p-8 md:p-10 rounded-3xl shadow-card border border-border space-y-5">
           <div>
             <label class="block text-sm font-medium text-foreground mb-2" for="f-nombre">Tu nombre</label>
             <input id="f-nombre" required placeholder="Juan Pérez" class="campo w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-smooth">
           </div>
           <div class="grid grid-cols-2 gap-4">
-            <div>
+            <div class="min-w-0">
               <label class="block text-sm font-medium text-foreground mb-2" for="f-fecha">Fecha</label>
-              <input id="f-fecha" required type="date" class="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-smooth">
+              <input id="f-fecha" required type="date" class="w-full min-w-0 px-4 py-3 rounded-xl bg-background border border-border focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-smooth">
             </div>
-            <div>
+            <div class="min-w-0">
               <label class="block text-sm font-medium text-foreground mb-2" for="f-personas">Personas</label>
-              <input id="f-personas" required type="number" min="1" max="10" value="2" class="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-smooth">
+              <input id="f-personas" required type="number" min="1" max="10" value="2" class="w-full min-w-0 px-4 py-3 rounded-xl bg-background border border-border focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-smooth">
             </div>
           </div>
           <div>
