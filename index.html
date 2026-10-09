@@ -266,10 +266,11 @@
           Quila Quina <em class="italic font-light">en fotos.</em>
         </h2>
       </div>
-      <div data-lightbox class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
-        <div class="rounded-2xl overflow-hidden foto col-span-2 md:col-span-4 aspect-[2/1] md:aspect-[3/1]"><img src="img/muelle-panoramica.jpg" alt="Muelle de Quila Quina con la cordillera nevada" loading="lazy" class="w-full h-full object-cover hover:scale-105 transition-smooth duration-700" onerror="this.remove()"></div>
-        <div class="rounded-2xl overflow-hidden foto aspect-[4/3] md:col-span-2"><img src="img/abanico.jpg" alt="Paredón del cerro Abanico sobre el Lácar" loading="lazy" class="w-full h-full object-cover hover:scale-105 transition-smooth duration-700" onerror="this.remove()"></div>
-        <div class="rounded-2xl overflow-hidden foto aspect-[4/3] md:col-span-2"><img src="img/lancha-3.jpg" alt="Muelle de Quila Quina" loading="lazy" class="w-full h-full object-cover hover:scale-105 transition-smooth duration-700" onerror="this.remove()"></div>
+      <div data-lightbox class="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
+        <div class="rounded-2xl overflow-hidden foto col-span-2 md:col-span-3 aspect-[2/1] md:aspect-[3/1]"><img src="img/muelle-panoramica.jpg" alt="Muelle de Quila Quina con la cordillera nevada" loading="lazy" class="w-full h-full object-cover hover:scale-105 transition-smooth duration-700" onerror="this.remove()"></div>
+        <div class="rounded-2xl overflow-hidden foto aspect-[4/3]"><img src="img/abanico.jpg" alt="Paredón del cerro Abanico sobre el Lácar" loading="lazy" class="w-full h-full object-cover hover:scale-105 transition-smooth duration-700" onerror="this.remove()"></div>
+        <div class="rounded-2xl overflow-hidden foto aspect-[4/3]"><img src="img/lancha-3.jpg" alt="Muelle de Quila Quina" loading="lazy" class="w-full h-full object-cover hover:scale-105 transition-smooth duration-700" onerror="this.remove()"></div>
+        <div class="rounded-2xl overflow-hidden foto aspect-[4/3] col-span-2 md:col-span-1"><img src="img/gansos.jpg" alt="Gansos en la orilla del Lácar en verano" loading="lazy" class="w-full h-full object-cover hover:scale-105 transition-smooth duration-700" onerror="this.remove()"></div>
       </div>
     </div>
   </section>
@@ -459,6 +460,7 @@ const experiences = [
   },
   {
     slug: "paseo-quila-quina",
+    sinReserva: true,   // se contrata en el momento en el muelle
     videos: [{ src: "videos/paseo.mp4", poster: "img/paseo-video.jpg", caption: "El cerro Abanico visto desde la lancha.", vertical: true }],
     img: "img/lancha.jpg",
     gallery: ["img/lancha.jpg"],
@@ -471,7 +473,7 @@ const experiences = [
     longDesc: [
       "Es el paseo perfecto si tenés poco tiempo y querés sentir el lago en su máxima expresión. En 35 a 40 minutos, según el clima, recorremos la bahía de Quila Quina, una de las postales más reconocidas de la Patagonia.",
       "Vas a ver el agua cambiar de turquesa a azul profundo según la profundidad y las pataguas (árboles milenarios) sumergidas en el agua. El imponente cerro Abanico visto desde abajo, una experiencia única.",
-      "Salimos cada hora de 9 a 20 hs. Ideal para niños."
+      "Salimos cada hora de 9 a 20 hs, sin reserva previa: nos encontrás en el muelle de Quila Quina. Ideal para niños."
     ],
     features: ["Salidas cada hora", "Chalecos para todos", "Apto niños"],
     includes: ["Lancha espaciosa para poder moverse y bancos", "Guía con datos del lago y la región", "Chalecos salvavidas (inclusive talles infantiles)", "Foto grupal con el cerro Abanico"],
@@ -542,7 +544,7 @@ const frases = {
   "traslado": "un traslado a playas del Lácar"
 };
 const opcionesForm = [
-  ...experiences,
+  ...experiences.filter(e => !e.sinReserva),
   { slug: "traslado", icon: "ship", title: "Traslado a playas", sub: "Precio según distancia y personas" }
 ];
 
@@ -716,9 +718,17 @@ function renderDetalle(exp) {
             <div class="text-xs text-muted-foreground uppercase tracking-wide">Desde</div>
             <div class="font-display text-4xl font-semibold text-foreground mb-1">${exp.price}</div>
             <div class="text-sm text-muted-foreground mb-6">${exp.priceUnit || "por embarcación"} · ${exp.duration}</div>
+            ${exp.sinReserva ? `
+            <div class="flex items-start gap-3 p-4 mb-4 rounded-xl bg-accent/10 text-sm text-foreground/85">
+              <i data-lucide="map-pin" class="w-4 h-4 text-accent mt-0.5 shrink-0"></i>
+              <span>No hace falta reservar. Encontranos en el <b>muelle de Quila Quina</b> y salís en el momento.</span>
+            </div>
+            <a href="${linkWA(`¡Hola! Quería consultar por ${frases[exp.slug] || exp.title}.`)}" target="_blank" rel="noopener" class="w-full inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-full bg-ember text-ember-foreground text-sm font-semibold hover:opacity-90 transition-smooth">
+              Consultar por WhatsApp <i data-lucide="message-circle" class="w-4 h-4"></i>
+            </a>` : `
             <a href="#reservar" class="w-full inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-full bg-ember text-ember-foreground text-sm font-semibold hover:opacity-90 transition-smooth">
               Reservar fecha <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
-            </a>
+            </a>`}
             <div class="mt-6 pt-6 border-t border-border">
               <div class="text-xs text-muted-foreground uppercase tracking-wide mb-3">Incluye</div>
               <ul class="space-y-2.5">
@@ -729,17 +739,6 @@ function renderDetalle(exp) {
         </aside>
       </div>
     </section>
-
-    ${exp.videos.length ? `<section class="pb-12 md:pb-28">
-      <div class="container">
-        ${exp.videos.map(v => `
-          <figure class="rounded-3xl overflow-hidden shadow-card bg-foreground ${v.vertical ? "max-w-md mx-auto" : ""}">
-            <video src="${v.src}" poster="${v.poster}" autoplay muted loop playsinline preload="metadata" class="w-full h-auto ${v.vertical ? "aspect-[4/5]" : "aspect-video"} object-cover"></video>
-            <figcaption class="px-6 py-4 text-sm text-background/80 bg-foreground">${v.caption}</figcaption>
-          </figure>`).join("")}
-      </div>
-    </section>` : ""}
-
     <section class="pb-12 md:pb-28">
       <div class="container">
         <div class="max-w-2xl mb-6 md:mb-10">
@@ -748,10 +747,15 @@ function renderDetalle(exp) {
             Postales de salidas <em class="italic font-light">reales</em>.
           </h2>
         </div>
-        <div data-lightbox class="grid md:grid-cols-3 gap-4 md:gap-6">
+        <div data-lightbox class="grid sm:grid-cols-2 ${exp.videos.length + exp.gallery.length >= 3 ? "lg:grid-cols-3" : "max-w-4xl"} gap-4 md:gap-6 items-start">
+          ${exp.videos.map(v => `
+            <figure class="rounded-2xl overflow-hidden shadow-card bg-foreground">
+              <video src="${v.src}" poster="${v.poster}" autoplay muted loop playsinline preload="metadata" class="w-full aspect-[4/5] object-cover"></video>
+              <figcaption class="px-5 py-3.5 text-sm text-background/80">${v.caption}</figcaption>
+            </figure>`).join("")}
           ${exp.gallery.map((img, i) => `
-            <div class="rounded-2xl overflow-hidden shadow-card group foto ${i === 0 ? "md:col-span-2 md:row-span-2" : ""}">
-              ${imgTag(img, `${exp.title} foto ${i + 1}`, "w-full h-full object-cover aspect-[4/3] group-hover:scale-105 transition-smooth duration-700")}
+            <div class="rounded-2xl overflow-hidden shadow-card group foto">
+              ${imgTag(img, `${exp.title} foto ${i + 1}`, "w-full aspect-[4/5] object-cover group-hover:scale-105 transition-smooth duration-700")}
             </div>`).join("")}
         </div>
       </div>
@@ -783,10 +787,15 @@ function renderDetalle(exp) {
           <h2 class="font-display text-background text-3xl md:text-5xl font-medium leading-[1.1] text-balance">
             ¿Listo para vivir el <em class="italic font-light">Lácar</em>?
           </h2>
+          ${exp.sinReserva ? `
+          <p class="text-background/80 mt-4 max-w-xl mx-auto">Te esperamos en el muelle de Quila Quina, sin reserva previa. Si tenés alguna duda, escribinos.</p>
+          <a href="${linkWA(`¡Hola! Quería consultar por ${frases[exp.slug] || exp.title}.`)}" target="_blank" rel="noopener" class="inline-flex items-center gap-2 mt-8 px-7 py-4 rounded-full bg-ember text-ember-foreground font-semibold hover:opacity-90 transition-smooth">
+            Consultar por WhatsApp <i data-lucide="message-circle" class="w-[18px] h-[18px]"></i>
+          </a>` : `
           <p class="text-background/80 mt-4 max-w-xl mx-auto">Reservá tu lugar con anticipación. Las fechas de temporada alta se llenan rápido.</p>
           <a href="#reservar" class="inline-flex items-center gap-2 mt-8 px-7 py-4 rounded-full bg-ember text-ember-foreground font-semibold hover:opacity-90 transition-smooth">
             Reservar ${exp.title} <i data-lucide="arrow-up-right" class="w-[18px] h-[18px]"></i>
-          </a>
+          </a>`}
         </div>
       </div>
     </section>`;
