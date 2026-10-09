@@ -400,7 +400,7 @@
 const experiences = [
   {
     slug: "salida-de-pesca",
-    videos: [{ src: "https://cdn.coverr.co/videos/coverr-fishing-on-a-lake-3268/1080p.mp4", poster: "img/pesca.jpg", caption: "Una mañana de paseo en las aguas del Lácar." }],
+    videos: [],
     img: "img/pesca.jpg",
     gallery: ["img/pesca.jpg"],
     icon: "fish",
@@ -428,7 +428,7 @@ const experiences = [
   },
   {
     slug: "paseo-quila-quina",
-    videos: [{ src: "https://cdn.coverr.co/videos/coverr-a-boat-sailing-in-a-lake-2633/1080p.mp4", poster: "img/lancha-3.jpg", caption: "Recorrido por la bahía de Quila Quina al mediodía." }],
+    videos: [{ src: "videos/paseo.mp4", poster: "img/paseo-video.jpg", caption: "El cerro Abanico visto desde la lancha.", vertical: true }],
     img: "img/lancha.jpg",
     gallery: ["img/lancha.jpg", "img/lancha-2.jpg", "img/lancha-3.jpg"],
     icon: "anchor",
@@ -455,7 +455,7 @@ const experiences = [
   },
   {
     slug: "aventura-familiar",
-    videos: [{ src: "https://cdn.coverr.co/videos/coverr-a-family-having-fun-in-the-lake-7081/1080p.mp4", poster: "img/familia.jpg", caption: "Un día completo en una playa escondida del Lácar." }],
+    videos: [],
     img: "img/familia.jpg",
     gallery: ["img/familia.jpg"],
     icon: "sun",
@@ -687,15 +687,15 @@ function renderDetalle(exp) {
       </div>
     </section>
 
-    <section class="pb-20 md:pb-28">
+    ${exp.videos.length ? `<section class="pb-20 md:pb-28">
       <div class="container">
         ${exp.videos.map(v => `
-          <figure class="rounded-3xl overflow-hidden shadow-card bg-foreground">
-            <video src="${v.src}" poster="${v.poster}" autoplay muted loop playsinline preload="metadata" class="w-full h-auto aspect-video object-cover"></video>
+          <figure class="rounded-3xl overflow-hidden shadow-card bg-foreground ${v.vertical ? "max-w-sm mx-auto" : ""}">
+            <video src="${v.src}" poster="${v.poster}" autoplay muted loop playsinline preload="metadata" class="w-full h-auto ${v.vertical ? "aspect-[9/16]" : "aspect-video"} object-cover"></video>
             <figcaption class="px-6 py-4 text-sm text-background/80 bg-foreground">${v.caption}</figcaption>
           </figure>`).join("")}
       </div>
-    </section>
+    </section>` : ""}
 
     <section class="pb-20 md:pb-28">
       <div class="container">
