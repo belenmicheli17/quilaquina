@@ -434,7 +434,7 @@ const experiences = [
     videos: [{ src: "videos/pesca.mp4", poster: "img/pesca-video.jpg", caption: "Lanzando al atardecer en una bahía del Lácar.", vertical: true }],
     img: "img/pesca.jpg",
     cover: "img/lancha-2.jpg",
-    gallery: ["img/pesca.jpg"],
+    gallery: ["img/pesca.jpg", "img/pesca-2.jpg", "img/pesca-3.jpg", "img/pesca-4.jpg", "img/pesca-5.jpg", "img/pesca-6.jpg", "img/pesca-7.jpg", "img/pesca-8.jpg"],
     icon: "fish",
     tag: "Para pescadores",
     title: "Salidas de pesca",
@@ -747,11 +747,11 @@ function renderDetalle(exp) {
             Postales de salidas <em class="italic font-light">reales</em>.
           </h2>
         </div>
-        <div data-lightbox class="grid sm:grid-cols-2 ${exp.videos.length + exp.gallery.length >= 3 ? "lg:grid-cols-3" : "max-w-4xl"} gap-4 md:gap-6 items-start">
+        <div data-lightbox class="grid grid-cols-2 ${exp.videos.length + exp.gallery.length >= 3 ? "lg:grid-cols-3" : "max-w-4xl"} gap-3 md:gap-6 items-start">
           ${exp.videos.map(v => `
-            <figure class="rounded-2xl overflow-hidden shadow-card bg-foreground">
+            <figure class="rounded-2xl overflow-hidden shadow-card bg-foreground ${(exp.videos.length + exp.gallery.length) % 2 ? "col-span-2 lg:col-span-1" : ""}">
               <video src="${v.src}" poster="${v.poster}" autoplay muted loop playsinline preload="metadata" class="w-full aspect-[4/5] object-cover"></video>
-              <figcaption class="px-5 py-3.5 text-sm text-background/80">${v.caption}</figcaption>
+              <figcaption class="px-3 py-2.5 md:px-5 md:py-3.5 text-xs md:text-sm text-background/80">${v.caption}</figcaption>
             </figure>`).join("")}
           ${exp.gallery.map((img, i) => `
             <div class="rounded-2xl overflow-hidden shadow-card group foto">
