@@ -548,6 +548,26 @@ const opcionesForm = [
   { slug: "traslado", icon: "ship", title: "Traslado a playas", sub: "Precio según distancia y personas" }
 ];
 
+/* ================= REPRODUCCIÓN DE VIDEOS =================
+   Algunos celulares (modo ahorro de batería, iPhone) bloquean el autoplay.
+   Forzamos mute + reproducción, reintentamos al primer toque y, si igual
+   no arranca, mostramos los controles para que se pueda dar play. */
+function reproducir(v, conControles = !v.dataset.fondo) {
+  v.muted = true; v.defaultMuted = true; v.playsInline = true;
+  v.setAttribute("muted", ""); v.setAttribute("playsinline", ""); v.setAttribute("webkit-playsinline", "");
+  const p = v.play();
+  if (p && p.catch) p.catch(() => { if (conControles) v.controls = true; });
+}
+const obsVideos = "IntersectionObserver" in window ? new IntersectionObserver((entradas) => {
+  entradas.forEach(e => { if (e.isIntersecting) reproducir(e.target); else e.target.pause(); });
+}, { threshold: 0.25 }) : null;
+function activarVideos(raiz = document) {
+  raiz.querySelectorAll("video").forEach(v => { obsVideos ? obsVideos.observe(v) : reproducir(v); });
+}
+["touchstart", "click"].forEach(ev => document.addEventListener(ev, () => {
+  document.querySelectorAll("video").forEach(v => { if (v.paused) reproducir(v); });
+}, { once: true, passive: true }));
+
 /* ================= VIDEO DE PORTADA (solo celulares) =================
    En pantallas angostas el video vertical llena la portada; en la compu queda la foto. */
 if (matchMedia("(max-width: 767px)").matches && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
@@ -557,7 +577,9 @@ if (matchMedia("(max-width: 767px)").matches && !matchMedia("(prefers-reduced-mo
   v.poster = "img/portada-movil.jpg";
   v.src = "videos/portada-movil.mp4";
   v.className = "absolute inset-0 w-full h-full object-cover";
+  v.dataset.fondo = "1";  // video de fondo: sin controles
   document.getElementById("hero-img")?.after(v);
+  reproducir(v);
 }
 
 /* ================= ARMADO DE LA PÁGINA ================= */
@@ -802,6 +824,7 @@ function renderDetalle(exp) {
   document.title = `${exp.title} · Lácar`;
   lucide.createIcons();
   prepararFotos();
+  activarVideos($("#detalle"));
 }
 
 /* ================= VISOR DE FOTOS =================
