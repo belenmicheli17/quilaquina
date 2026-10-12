@@ -570,7 +570,7 @@ function activarVideos(raiz = document) {
 
 /* ================= VIDEO DE PORTADA (solo celulares) =================
    En pantallas angostas el video vertical llena la portada; en la compu queda la foto. */
-if (matchMedia("(max-width: 767px)").matches && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
+if (matchMedia("(max-width: 767px)").matches) {
   const v = document.createElement("video");
   v.muted = true; v.loop = true; v.autoplay = true; v.playsInline = true;
   v.setAttribute("muted", ""); v.setAttribute("playsinline", "");
@@ -579,6 +579,7 @@ if (matchMedia("(max-width: 767px)").matches && !matchMedia("(prefers-reduced-mo
   v.className = "absolute inset-0 w-full h-full object-cover";
   v.dataset.fondo = "1";  // video de fondo: sin controles
   document.getElementById("hero-img")?.after(v);
+  v.addEventListener("canplay", () => { if (v.paused) reproducir(v); });
   reproducir(v);
 }
 
